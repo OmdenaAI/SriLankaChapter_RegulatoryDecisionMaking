@@ -18,8 +18,7 @@ def create_directories():
                     'data_source_tri',
                     'data_source_lawnet',
                     'data_source_tbal',
-                    'data_source_egz',
-                    'data_source_userupload']
+                    'data_source_egz']
 
     # Create structure for v0_0 only
     os.makedirs(task1_path, exist_ok=True)
