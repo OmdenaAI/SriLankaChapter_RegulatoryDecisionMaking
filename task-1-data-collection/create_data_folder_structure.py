@@ -14,7 +14,7 @@ def create_directories():
     task2_path = os.path.join(script_path, "../data/task2_preprocessed_data")
     final_dataset_path = os.path.join(script_path, "../data/final_dataset")
 
-    data_sources = ['data_source_physical_archive_manual',
+    data_sources = ['data_source_physical_archives_manual',
                     'data_source_tri',
                     'data_source_lawnet',
                     'data_source_tbal',
