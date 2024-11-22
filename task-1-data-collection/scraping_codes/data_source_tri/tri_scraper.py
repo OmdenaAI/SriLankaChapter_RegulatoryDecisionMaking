@@ -12,7 +12,12 @@ import requests
 import os
 
 TRI_URL = 'https://www.tri.lk/view-all-publications/'
-TESTING_MODE = True
+# ANA: Remember to change this to False once the code is ready
+TESTING_MODE = False
+
+if TESTING_MODE:
+    import csv
+
 
 async def scrape_website(tri_url):
     """
@@ -29,41 +34,58 @@ async def scrape_website(tri_url):
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
 
-        # Navigate to the URL
-        await page.goto(tri_url)
-
-        # Wait for the page to load completely
+        table_selectors = ['table#footable_581',  # Circulars Table
+                           'table#footable_616']  # Guidelines Table
+        publications = []
+        current_page = tri_url
+        print(f"Scraping page: {current_page}")
+        await page.goto(current_page)
         await page.wait_for_timeout(5000)  # Adjust time as needed for loading
 
-        # Get the page content
-        html_content = await page.content()
+        for table_selector in table_selectors:
+            last_table_html = ""   # workaround to check when there are no more Next pages
+            while True:
+                # Get the table content
+                current_table_html = await page.inner_html(table_selector)
+                # Check if the table content has changed
+                if current_table_html == last_table_html:
+                    # print("Content is same as before, no more Next pages, exiting loop")
+                    break  # If the content has not changed, we've reached the end of pagination, exit the pagination loop
 
-        # Use BeautifulSoup to parse the HTML
-        soup = BeautifulSoup(html_content, 'html.parser')
+                last_table_html = current_table_html
+                # Use BeautifulSoup to parse the HTML
+                soup = BeautifulSoup(current_table_html, 'html.parser')
 
-        # Extract all PDF links, names, and publication dates
-        publications = []
-        for row in soup.find_all('tr'):
-            link_tag = row.find('a', href=True)
-            date_tag = row.find('td', class_='ninja_clmn_nm_issued_in')
+                # Extract all PDF links, names, and publication dates
+                for row in soup.find_all('tr'):
+                    link_tag = row.find('a', href=True)
+                    date_tag = row.find('td', class_='ninja_clmn_nm_issued_in')
 
-            if link_tag and date_tag:
-                pdf_link = link_tag['href']  # PDF link
-                pdf_name = link_tag.text.strip()  # PDF name
-                pdf_date = date_tag.text.strip()  # PDF date
+                    if link_tag and date_tag:
+                        pdf_link = link_tag['href']  # PDF link
+                        pdf_name = link_tag.text.strip()  # PDF name
+                        pdf_date = date_tag.text.strip()  # PDF date
 
-                publications.append({
-                    'PDF Name': pdf_name,
-                    'PDF Link': pdf_link,
-                    'Publication Date': pdf_date
-                })
+                        publications.append({
+                            'PDF Name': pdf_name,
+                            'PDF Link': pdf_link,
+                            'Publication Date': pdf_date
+                        })
+
+                # Check if there is a "Next" button to go to the next page
+                next_button = await page.query_selector('li.footable-page-nav[data-page="next"] a.footable-page-link')  # Updated selector
+                if next_button:
+                    # print("Clicking Next button")
+                    await next_button.click()
+                    # Wait for the new page content to load
+                    await page.wait_for_timeout(2000)
+                else:
+                    # print("No Next button found")
+                    break # exit the pagination loop
 
         # Close the browser
         await browser.close()
 
-        # Once we have the URLs for the documents, download the files
-
-        # print(len(publications))
         return publications
 
 
@@ -75,15 +97,15 @@ def download_pdf_and_get_info(publications):
     counter = {}
     script_path = os.path.dirname(__file__)
     relative_path_to_root = os.path.join(script_path, "../../../")
-    # ANA: FIX
+    # Save the scraped pdfs into the relevant destination folder
     destination_folder = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/files"
     if TESTING_MODE:
         destination_folder = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/"
 
-    for row in publications:
-        request_url = row['PDF Link']
+    for pub in publications:
+        request_url = pub['PDF Link']
         if not request_url.startswith('https://www.tri.lk'):
-            request_url = 'https://www.tri.lk' + row['PDF Link']
+            request_url = 'https://www.tri.lk' + pub['PDF Link']
 
         response = requests.get(request_url)
 
@@ -123,12 +145,29 @@ def download_pdf_and_get_info(publications):
     return results
 
 
+def write_to_csv(publications_list):
+    # Used for Testing only
+    if TESTING_MODE:
+        script_path = os.path.dirname(__file__)
+        relative_path_to_root = os.path.join(script_path, "../../../")
+        destination_file = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/data_with_next.csv"
+        field_names = ['PDF Name', 'PDF Link', 'Publication Date']
+        # Write to CSV
+        with open(destination_file, 'w', newline='', encoding="utf-8") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=field_names)
+            writer.writeheader()  # Write the header row
+            writer.writerows(publications_list)  # Write the data rows
+
+
 async def main():
     # Scrape the website and wait for it to finish
+    # ANA: TODO The destination folder name or version name should go in as a parameter
     result = await scrape_website(TRI_URL)
+    print(f"Number of results: {len(result)}")
+    write_to_csv(result)
     # print(f"Scraped Data: {result}")
 
-    print("Scraping done. Proceeding to the next steps...")
+    print("Initial scraping done. Downloading files into the destination folder now....")
     downloaded_results = download_pdf_and_get_info(result)
     # print(downloaded_results)
     print("Downloaded documents from TRI")
