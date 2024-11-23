@@ -1,33 +1,28 @@
 """
 Original code by Memoona in https://colab.research.google.com/drive/1Jvf4Z2-mxKMvemg6GaxRuD53WPVnOFJD#scrollTo=CY4ndzlUsulN
 
+This files scrapes Circulars and Guidelines from https://www.tri.lk/view-all-publications/
+using playwright, BeautifulSoup, and requests, and saves the downloads in the relevant data folder.
+
+Requirements:
 pip install playwright
 playwright install  # This installs the necessary browser binaries
 """
-
 import asyncio
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 import requests
 import os
-
-TRI_URL = 'https://www.tri.lk/view-all-publications/'
-# ANA: Remember to change this to False once the code is ready
-TESTING_MODE = False
-
-if TESTING_MODE:
-    import csv
+import csv
 
 
-async def scrape_website(tri_url):
+async def get_pdf_links(tri_url):
     """
     Scrapes the specified website asynchronously and returns the scraped data.
-
     Args:
         url (str): The URL of the website to scrape.
-
     Returns:
-        dict: A dictionary containing the scraped data.
+        list: A list of dictionaries containing the PDF Name, PDF Link, Publication Date.
     """
     async with async_playwright() as p:
         # Launch a headless browser
@@ -43,16 +38,16 @@ async def scrape_website(tri_url):
         await page.wait_for_timeout(5000)  # Adjust time as needed for loading
 
         for table_selector in table_selectors:
-            last_table_html = ""   # workaround to check when there are no more Next pages
+            last_table_html = ""   # workaround to check when there are no more Next pages and exit the pagination loop
             while True:
                 # Get the table content
                 current_table_html = await page.inner_html(table_selector)
                 # Check if the table content has changed
                 if current_table_html == last_table_html:
-                    # print("Content is same as before, no more Next pages, exiting loop")
-                    break  # If the content has not changed, we've reached the end of pagination, exit the pagination loop
-
+                    # Table content is the same as the previous iteration, no more Next pages, exit the loop
+                    break
                 last_table_html = current_table_html
+
                 # Use BeautifulSoup to parse the HTML
                 soup = BeautifulSoup(current_table_html, 'html.parser')
 
@@ -73,14 +68,13 @@ async def scrape_website(tri_url):
                         })
 
                 # Check if there is a "Next" button to go to the next page
-                next_button = await page.query_selector('li.footable-page-nav[data-page="next"] a.footable-page-link')  # Updated selector
+                next_button = await page.query_selector('li.footable-page-nav[data-page="next"] a.footable-page-link')
                 if next_button:
-                    # print("Clicking Next button")
                     await next_button.click()
                     # Wait for the new page content to load
                     await page.wait_for_timeout(2000)
                 else:
-                    # print("No Next button found")
+                    # No Next button found
                     break # exit the pagination loop
 
         # Close the browser
@@ -89,19 +83,18 @@ async def scrape_website(tri_url):
         return publications
 
 
-def download_pdf_and_get_info(publications):
-    # Function to download PDF and retrieve metadata
-
+def download_pdf_and_get_info(publications, destination_folder):
+    """
+    Uses the requests library to download pdfs from the links given.
+    Args:
+        publications: A list of dictionaries, each containing PDF Name, PDF Link, and Publication Date.
+        destination_folder: Relative path to the folder where you want the scraped result to be stored.
+    Returns:
+        A list of dictionaries containing PDF Names and Publication Dates
+    """
     results = []
     # Counter dictionary to keep track of filenames
     counter = {}
-    script_path = os.path.dirname(__file__)
-    relative_path_to_root = os.path.join(script_path, "../../../")
-    # Save the scraped pdfs into the relevant destination folder
-    destination_folder = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/files"
-    if TESTING_MODE:
-        destination_folder = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/"
-
     for pub in publications:
         request_url = pub['PDF Link']
         if not request_url.startswith('https://www.tri.lk'):
@@ -139,38 +132,54 @@ def download_pdf_and_get_info(publications):
                 })
         else:
             print(f"Failed to retrieve {request_url}")
-        # ANA: REMOVE
-        if TESTING_MODE:
-            break
     return results
 
 
 def write_to_csv(publications_list):
-    # Used for Testing only
-    if TESTING_MODE:
-        script_path = os.path.dirname(__file__)
-        relative_path_to_root = os.path.join(script_path, "../../../")
-        destination_file = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/data_with_next.csv"
-        field_names = ['PDF Name', 'PDF Link', 'Publication Date']
-        # Write to CSV
-        with open(destination_file, 'w', newline='', encoding="utf-8") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=field_names)
-            writer.writeheader()  # Write the header row
-            writer.writerows(publications_list)  # Write the data rows
+    """
+    Utility function used for testing only
+    """
+    script_path = os.path.dirname(__file__)
+    relative_path_to_root = os.path.join(script_path, "../../../")
+    destination_file = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/data_with_next.csv"
+    field_names = ['PDF Name', 'PDF Link', 'Publication Date']
+    # Write to CSV
+    with open(destination_file, 'w', newline='', encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=field_names)
+        writer.writeheader()  # Write the header row
+        writer.writerows(publications_list)  # Write the data rows
+
+
+async def scrape_website(tri_url, destination_data_folder):
+    """
+    Scrapes the specified website asynchronously and returns the scraped data.
+    Args:
+        url (str): The URL of the website to scrape.
+        destination_data_folder: path to the folder where you want the scraped result to be stored.
+    Returns:
+        dict: A list of dictionaries containing PDF Names and Publication Dates. Also, pdf files are saved into the destination_data_folder.
+    Sample:
+        result = await scrape_website('https://www.tri.lk/view-all-publications/', 'data/task1_raw_input/data_source_tri/v0_0/files/')
+    """
+    # Create the relative path to the destination data folder
+    script_path = os.path.dirname(__file__)
+    relative_path_to_root = os.path.join(script_path, "../../../")
+    destination_folder = os.path.join(relative_path_to_root, destination_data_folder)
+
+    # Scrape the PDF links from the TRI website
+    result = await get_pdf_links(tri_url)
+    print(f"Number of results: {len(result)}")
+    print(f"Initial scraping done. Downloading files into {destination_folder} now....")
+
+    # Download the documents from the links that were scraped
+    downloaded_results = download_pdf_and_get_info(result, destination_folder)
+    print("Downloaded documents from TRI")
+
+    return downloaded_results
 
 
 async def main():
-    # Scrape the website and wait for it to finish
-    # ANA: TODO The destination folder name or version name should go in as a parameter
-    result = await scrape_website(TRI_URL)
-    print(f"Number of results: {len(result)}")
-    write_to_csv(result)
-    # print(f"Scraped Data: {result}")
-
-    print("Initial scraping done. Downloading files into the destination folder now....")
-    downloaded_results = download_pdf_and_get_info(result)
-    # print(downloaded_results)
-    print("Downloaded documents from TRI")
+    res = await scrape_website('https://www.tri.lk/view-all-publications/', 'data/task1_raw_input/data_source_tri/v0_0/files/')
 
 # Entry point for the script
 if __name__ == "__main__":
