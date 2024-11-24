@@ -10,7 +10,8 @@ data_sources = [
         'data_source_tri',
         'data_source_lawnet',
         'data_source_tbal',
-        'data_source_egz'
+        'data_source_egz',
+        'data_source_user_upload'
     ]
 
 # Function to create directories for v0.0 without creating any CSVs
@@ -53,5 +54,5 @@ def create_task1_directories():
 
 if __name__ == "__main__":
     # Call the function to create the structure only for v0.0 without creating any CSVs
-    # create_data_directories()
+    create_data_directories()
     create_task1_directories()
