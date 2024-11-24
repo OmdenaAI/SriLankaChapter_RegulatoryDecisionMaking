@@ -4,9 +4,8 @@ Original code by Memoona in https://colab.research.google.com/drive/1Jvf4Z2-mxKM
 This files scrapes Circulars and Guidelines from https://www.tri.lk/view-all-publications/
 using playwright, BeautifulSoup, and requests, and saves the downloads in the relevant data folder.
 
-Requirements:
-pip install playwright
-playwright install  # This installs the necessary browser binaries
+Sample usage:
+result = await scrape_website('https://www.tri.lk/view-all-publications/', 'data/task1_raw_input/data_source_tri/v0_0/files/')
 """
 import asyncio
 from playwright.async_api import async_playwright
@@ -22,7 +21,7 @@ async def get_pdf_links(tri_url):
     Args:
         url (str): The URL of the website to scrape.
     Returns:
-        list: A list of dictionaries containing the PDF Name, PDF Link, Publication Date.
+        list: A list of dictionaries containing the PDF Name, PDF Link, Publication Date, and PDF class of Circulers or Guideline.
     """
     async with async_playwright() as p:
         # Launch a headless browser
@@ -38,6 +37,10 @@ async def get_pdf_links(tri_url):
         await page.wait_for_timeout(5000)  # Adjust time as needed for loading
 
         for table_selector in table_selectors:
+            if table_selector == 'table#footable_581':
+                document_class = 'Circulers'
+            elif table_selector == 'table#footable_616':
+                document_class = 'Guideline'
             last_table_html = ""   # workaround to check when there are no more Next pages and exit the pagination loop
             while True:
                 # Get the table content
@@ -64,7 +67,8 @@ async def get_pdf_links(tri_url):
                         publications.append({
                             'PDF Name': pdf_name,
                             'PDF Link': pdf_link,
-                            'Publication Date': pdf_date
+                            'Publication Date': pdf_date,
+                            'PDF Class': document_class
                         })
 
                 # Check if there is a "Next" button to go to the next page
@@ -114,7 +118,9 @@ def download_pdf_and_get_info(publications, destination_folder):
                 counter[pdf_name] = 1
 
             # Save the PDF
-            pdf_path = os.path.join(destination_folder, pdf_name)
+            destination_class_folder = os.path.join(destination_folder, pub['PDF Class'])
+            os.makedirs(destination_class_folder, exist_ok=True)
+            pdf_path = os.path.join(destination_class_folder, pdf_name)
             with open(pdf_path, 'wb') as f:
                 f.write(response.content)
 
@@ -137,12 +143,13 @@ def download_pdf_and_get_info(publications, destination_folder):
 
 def write_to_csv(publications_list):
     """
-    Utility function used for testing only
+    Utility function used for testing only, this writes the PDF links scraped by get_pdf_links
+    into a csv file.
     """
     script_path = os.path.dirname(__file__)
     relative_path_to_root = os.path.join(script_path, "../../../")
     destination_file = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/data_with_next.csv"
-    field_names = ['PDF Name', 'PDF Link', 'Publication Date']
+    field_names = ['PDF Name', 'PDF Link', 'Publication Date', 'PDF Class']
     # Write to CSV
     with open(destination_file, 'w', newline='', encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
@@ -169,6 +176,7 @@ async def scrape_website(tri_url, destination_data_folder):
     # Scrape the PDF links from the TRI website
     result = await get_pdf_links(tri_url)
     print(f"Number of results: {len(result)}")
+    # write_to_csv(result)
     print(f"Initial scraping done. Downloading files into {destination_folder} now....")
 
     # Download the documents from the links that were scraped
