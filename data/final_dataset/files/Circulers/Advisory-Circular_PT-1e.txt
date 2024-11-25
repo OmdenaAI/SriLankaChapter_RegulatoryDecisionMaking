@@ -1,0 +1,151 @@
+T.R.I. ADVISORY CIRCULAR _No.PT
+
+ 
+
+Date of Issue: September 2003 Serial No: 14/03
+
+TROUGH - WITHERING OF TEA
+(This Advisory Circular replaces Circular No. T1, Serial No. 6/71)
+
+1. Introduction
+
+Trough withering of tea leaf is recommended for all tea growing districts in Sri Lanka. At the
+initial stages, tats were used for withering, but they are obsolete now.
+
+This Circular addresses factories, which have trough installations. Those considering trough
+installations in new factories must request for advice specific to individual cases. They are
+therefore, excluded from the scope of this Circular.
+
+2. Factors to be considered before troughs are installed in a loft
+2.1. Dimensions of troughs:
+The standard width of troughs is 6 ft. (1.8 m) but the length can be varied to suit the loft.
+
+Alternatively, the length could match the capacity of one roller (charge) or a small
+multiple thereof. The objective is to make the maximum use of the available floor space.
+
+2.2. Trough capacity:
+
+Trough capacity is computed on the basis of 2.5 kg/sq.ft. (approx. 27 kg green leaf per
+sq.m). For example, a trough 6' (1.8 m) wide and 50° (15.24 m) in length would have
+300 sq.ft. (27.4 sq.m). of withering area and the following capacities:
+
+Normal capacity 300 x 2.5 = 750kg
+
+The maximum could be at the rate of 3 kg/sq.ft. (32.3 kg/sq.m)
+
+The maximum capacity 300 x 3.0 = 900 kg
+2.3 Air requirements:
+
+Fans should be capable of delivering 0.56 cu.m. of air per minute per kg (20 cfm/kg) of
+fresh leaf at a pressure of approximately 0.5 inches (13 mm) water gauge (WG). A fan
+coupled to a trough carrying 750 kg of green leaf should therefore, be capable of
+delivering a minimum throughput of 420 cu.m per minute (approx. 1500 cfm) at a
+pressure of 13 mm WG.
+
+2.4 Other considerations:
+
+= There should be a clearance of at least half a fan diameter between the cold air intake of
+each fan and any obstacle, of sizeable proportion.
+
+= In the case of fans of two troughs facing each other, partitioning fan and chamber should
+be avoided to minimize fan starvation.
+
+= Allow a working space at least 0.60 m between troughs.
+
+1
+« The area of the hot air intake should approximate that of the cold air intake.
+
+* The trough should be sited in such a way that the hot air intake is not too distant from
+the drier discharge. First-floor lofts are the most convenient for trough installation. The
+floor should be devoid of damages. A floor sealed with an extra 26 gauge GI sheet is
+useful.
+
+3. Use of troughs for withering tea leaf
+
+The leaf should be sp'read at a rate of 2.5 kg/sq.ft' subject to a maximum of 3 kg/sq.ft
+immediately on arrival at the factory. It is very important that the leaf should be spread
+uniformly throughout the length of a trough and the fan turned on as soon as spreading
+operation is complete. If there is heat build up in the leaf, loading should done with the fan on.
+
+3.1 Wet leaf:
+
+Regulate the cold and hot air dampers to give the maximum throughput of air at a
+hygrometric difference of 8 to 10°F (approx. 4.5 to 5.5°C) for approximately 1 - 2 hours
+depending on the wetness. Surface moisture should have been removed by this time.
+The leaf can now be turned over gently loosening all 'lumps'. Reduce the hygrometric
+difference to about 4 - 6°F (approx. 2.2 - 3.3°C) at this stage and turn the leaf for the
+second time when the layer of leaf at bottom is almost withered.
+
+3.2 Dry bulb:
+
+Regulate the dampers as before to give an under-bed hygrometric difference of 4 - OF.
+It would be adequate if the leaf was turned once when the layer of leaf at the bottom is
+almost withered. The fans should be switched off when the leaf is being turned over.
+
+During periods of prolonged dry weather, ambient hygrometric differences may exceed
+6°F. Under these conditions, a short wither is inevitable and night manufacture may have
+to be resorted to, short withers would suit estates going through their quality season as
+they would invariably be conducting night manufacture, but elsewhere, if there is no
+justification for conducting night manufacture, the troughs should be operated with the
+hot air dampers fully closed and with the cold air dampers also partially closed. A higher
+spreading rate would also assist in delaying the wither.
+
+If the wither is complete but the leaf cannot be immediately charged into a roller for some
+reason, and if there is heat build up in the leaf, it is preferable to operate the fans leaving the
+doors at the gable (fan) end of the trough full open. The trickle of air passing through the leaf in
+this condition would surface to keep the leaf from heating, but would not be adequate to permit
+any appreciable withering to take place.
+
+ 
+
+"The spreading rate is intentionally given as kg/sq. ft, as factory staff are more conversant with this
+combination than kg/sq.m
+ie
+Use of lofts
+
+If there is no surface moisture in the leaf, the evening leaf should be spread on the ‘st loft. If
+there is surface moisture in the leaf, the leaf could be spread on troughs with hot air intakes
+situated near the drier. Consideration can also be given to spreading the leaf on the troughs in
+such a manner as to prevent exposure of leaf to direct sunlight.
+
+4. Energy usage
+
+Bulk of electricity consumption in black tea processing takes place in the unit operation of
+withering. Installation of speed controllers to trough fans is recommended, to reduce the
+electricity consumption in withering, by about 40%. It is always recommended to use harmonic
+filters with these speed controllers to minimize the damage to the machinery.
+Capacitors/capacitor banks can cause harmonics in the power supply.
+
+5. General
+
+The practice of emptying leaf bags on the floor before loading the trough is discouraged. It is far
+better to empty these bags directly on the troughs because this ease the operation and
+minimizes handling and bruising of the leaf, which could lead to premature fermentation.
+
+Reversible switchgear is of limited use in troughs and as such not recommended. Turning the
+leaf by hand gives a more satisfactory wither.
+
+Wider troughs with more than 6' (1.82 m) are not recommended due to difficulties in handling
+green leaf during the operations of loading, loosening, turning and unloading. Such difficulties
+result in uneven withers and hence the quality of tea produced suffers.
+
+Insurance regulations permit the installation of tube lights in lofts equipped with troughs. This is
+of great benefit.
+
+All windows in the loft should be fitted with wire mesh or nylon netting to prevent birds entering.
+Insect traps too need to be fitted in the loft to prevent insect approaching the lights in the night.
+
+The Tea Research Institute of Sri Lanka
+Talawakelle
+
+Copyright — The Tea Research Institute of Sri Lanka 2003
+
+COPY RIGHT
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or
+by any means, electronic or mechanical, including photocopying, recording or information
+storage and retrieval, without permission in writing from the Director, The Tea Research Institute
+of Sri Lanka.
+
+ 
+
