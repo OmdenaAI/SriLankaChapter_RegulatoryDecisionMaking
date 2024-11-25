@@ -16,7 +16,7 @@ CSV_COMBINED_RELATIVE_PATH = '..\\data\\task1_raw_input\\v0_0_LK_combined_raw.cs
 
 def write_dict_to_csv(contents, destination_file_relative_path):
     output_csv = os.path.join(SCRIPT_PATH, destination_file_relative_path)
-    field_names = ['class', 'filename', 'path', 'url', 'data_origin', 'retrieved_date', 'issuing_authority', 'PDF_or_text']
+    field_names = ['class', 'filename', 'path', 'url', 'data_origin', 'retrieved_date_of_issuance', 'issuing_authority', 'retrieved_topic', 'PDF_or_text']
     with open(output_csv, 'w', newline='', encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
         writer.writeheader()  # Write the header row
@@ -62,8 +62,9 @@ def create_lawnet_files_from_json(destination_csv_relative_path):
                           'path': output_file_path_short,
                           'url': row['url'],
                           'data_origin': 'scraped',
-                          'retrieved_date': '',
+                          'retrieved_date_of_issuance': '',
                           'issuing_authority': 'Parliament of Sri Lanka ACT',
+                          'retrieved_topic': '',
                           'PDF_or_text': 'Text'})
 
     # Write to a CSV file
@@ -82,8 +83,9 @@ def create_egz_csv(destination_csv_relative_path):
                           'path': file_path_short,
                           'url': '',
                           'data_origin': 'scraped',
-                          'retrieved_date': '',
+                          'retrieved_date_of_issuance': '',
                           'issuing_authority': 'Government of Sri Lanka egz',
+                          'retrieved_topic': '',
                           'PDF_or_text': 'PDF'})
 
     # Write to a CSV file
@@ -103,8 +105,9 @@ def create_tbal_csv(destination_csv_relative_path):
                           'path': file_path_short,
                           'url': '',
                           'data_origin': 'scraped',
-                          'retrieved_date': '',
+                          'retrieved_date_of_issuance': '',
                           'issuing_authority': 'Tea Board Analytical Lab Circulers',
+                          'retrieved_topic': '',
                           'PDF_or_text': 'PDF'})
 
     # Write to a CSV file
@@ -125,8 +128,9 @@ def create_phyarch_csv(destination_csv_relative_path):
                         'path': file_path_short,
                         'url': '',
                         'data_origin': 'original_dataset',
-                        'retrieved_date': '',
+                        'retrieved_date_of_issuance': '',
                         'issuing_authority': 'Tea Board Circulers',
+                        'retrieved_topic': '',
                         'PDF_or_text': ''})   # PDF_or_text is left blank because it requires some more steps to decide this for the manual documents
 
     # Write to a CSV file

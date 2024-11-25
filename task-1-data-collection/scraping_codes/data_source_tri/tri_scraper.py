@@ -18,7 +18,7 @@ import csv
 def write_to_csv(contents, destination_file_relative_path):
     script_path = os.path.dirname(__file__)
     output_csv = os.path.join(script_path, destination_file_relative_path)
-    field_names = ['class', 'filename', 'path', 'url', 'data_origin', 'retrieved_date', 'issuing_authority', 'PDF_or_text']
+    field_names = ['class', 'filename', 'path', 'url', 'data_origin', 'retrieved_date_of_issuance', 'issuing_authority', 'retrieved_topic','PDF_or_text']
     with open(output_csv, 'w', newline='', encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
         writer.writeheader()  # Write the header row
@@ -31,6 +31,70 @@ def trim_absolute_path_tri(file_path):
     if len(file_path_mod) > 1:
         trimmed_path = file_path_mod[1].replace('\\task-1-data-collection\scraping_codes\data_source_tri\..\..\..', '')
     return trimmed_path
+
+
+def download_pdf_and_get_info(publications, destination_folder):
+    """
+    Uses the requests library to download pdfs from the links given.
+    Args:
+        publications: A list of dictionaries, each containing PDF Name, PDF Link, and Publication Date.
+        destination_folder: Relative path to the folder where you want the scraped result to be stored.
+    Returns:
+        A list of dictionaries containing PDF Names and Publication Dates and other information.
+    """
+    results = []
+    # Counter dictionary to keep track of filenames
+    counter = {}
+    for pub in publications:
+        request_url = pub['PDF Link']
+        if not request_url.startswith('https://www.tri.lk'):
+            request_url = 'https://www.tri.lk' + pub['PDF Link']
+
+        response = requests.get(request_url)
+
+        if response.status_code == 200:
+            # Extracting the filename from the URL
+            pdf_name = request_url.split("/")[-1]
+
+            # Increment counter for duplicate filenames
+            if pdf_name in counter:
+                counter[pdf_name] += 1
+                pdf_name = f"{pdf_name[:-4]} - {counter[pdf_name]}.pdf"  # Append the counter before .pdf
+            else:
+                counter[pdf_name] = 1
+
+            # Save the PDF
+            destination_class_folder = os.path.join(destination_folder, pub['PDF Class'])
+            os.makedirs(destination_class_folder, exist_ok=True)
+            pdf_path = os.path.join(destination_class_folder, pdf_name)
+            with open(pdf_path, 'wb') as f:
+                f.write(response.content)
+
+            # Use Beautiful Soup to scrape the page for additional info
+            # soup = BeautifulSoup(response.content, 'html.parser')
+            # Here you would define how to find publication date and other info
+            # Assuming publication date is in a specific tag (modify as needed) - this was not working so commented
+            # publication_date = soup.find('meta', {'name': 'date'})['content'] if soup.find('meta', {'name': 'date'}) else ''
+
+            trimmed_path = trim_absolute_path_tri(pdf_path)
+            if pdf_name:
+                results.append({
+                'class': pub['PDF Class'],
+                'filename': pdf_name,
+                'path': trimmed_path,
+                'url': request_url,
+                'data_origin': 'scraped',
+                'retrieved_date_of_issuance': pub['Publication Date'],
+                'issuing_authority': 'TRI ' + pub['PDF Class'],
+                'retrieved_topic': pub['PDF Name'],
+                'PDF_or_text': 'PDF'
+                })
+        else:
+            print(f"Failed to retrieve {request_url}")
+
+    # Note: This path for the csv is hardcoded now, it should be fixed to work for v0_1
+    write_to_csv(results, '..\\..\\..\\data\\task1_raw_input\\data_source_tri\\v0_0\\v0_0_LK_tea_tri_raw.csv')
+    return results
 
 
 async def get_pdf_links(tri_url):
@@ -105,70 +169,6 @@ async def get_pdf_links(tri_url):
         return publications
 
 
-def download_pdf_and_get_info(publications, destination_folder):
-    """
-    Uses the requests library to download pdfs from the links given.
-    Args:
-        publications: A list of dictionaries, each containing PDF Name, PDF Link, and Publication Date.
-        destination_folder: Relative path to the folder where you want the scraped result to be stored.
-    Returns:
-        A list of dictionaries containing PDF Names and Publication Dates and other information.
-    """
-    results = []
-    # Counter dictionary to keep track of filenames
-    counter = {}
-    for pub in publications:
-        request_url = pub['PDF Link']
-        if not request_url.startswith('https://www.tri.lk'):
-            request_url = 'https://www.tri.lk' + pub['PDF Link']
-
-        response = requests.get(request_url)
-
-        if response.status_code == 200:
-            # Extracting the filename from the URL
-            pdf_name = request_url.split("/")[-1]
-
-            # Increment counter for duplicate filenames
-            if pdf_name in counter:
-                counter[pdf_name] += 1
-                pdf_name = f"{pdf_name[:-4]} - {counter[pdf_name]}.pdf"  # Append the counter before .pdf
-            else:
-                counter[pdf_name] = 1
-
-            # Save the PDF
-            destination_class_folder = os.path.join(destination_folder, pub['PDF Class'])
-            os.makedirs(destination_class_folder, exist_ok=True)
-            pdf_path = os.path.join(destination_class_folder, pdf_name)
-            with open(pdf_path, 'wb') as f:
-                f.write(response.content)
-
-            # Use Beautiful Soup to scrape the page for additional info
-            soup = BeautifulSoup(response.content, 'html.parser')
-            # Here you would define how to find publication date and other info
-            # Assuming publication date is in a specific tag (modify as needed)
-            publication_date = soup.find('meta', {'name': 'date'})['content'] if soup.find('meta', {'name': 'date'}) else ''
-
-            trimmed_path = trim_absolute_path_tri(pdf_path)
-
-            if pdf_name:
-                results.append({
-                'class': pub['PDF Class'],
-                'filename': pdf_name,
-                'path': trimmed_path,
-                'url': request_url,
-                'data_origin': 'scraped',
-                'retrieved_date': publication_date,
-                'issuing_authority': 'TRI ' + pub['PDF Class'],
-                'PDF_or_text': 'PDF'
-                })
-        else:
-            print(f"Failed to retrieve {request_url}")
-
-    # Note: This path for the csv is hardcoded now, it should be fixed to work for v0_1
-    write_to_csv(results, '..\\..\\..\\data\\task1_raw_input\\data_source_tri\\v0_0\\initial_tri.csv')
-    return results
-
-
 async def scrape_website(tri_url, destination_data_folder):
     """
     Scrapes the specified website asynchronously and returns the scraped data.
@@ -188,7 +188,6 @@ async def scrape_website(tri_url, destination_data_folder):
     # Scrape the PDF links from the TRI website
     result = await get_pdf_links(tri_url)
     print(f"Number of results: {len(result)}")
-    # write_to_csv(result)
     print(f"Initial scraping done. Downloading files into {destination_folder} now....")
 
     # Download the documents from the links that were scraped
