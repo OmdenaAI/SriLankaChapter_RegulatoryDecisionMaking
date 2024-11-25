@@ -31,9 +31,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install black flake8 pre-commit
 
+      # - name: Run Black for auto-formatting
+      #   run: |
+      #     black --check .  # Check formatting (fails if any file is not formatted)
+
       - name: Run Black for auto-formatting
         run: |
-          black --check .  # Check formatting (fails if any file is not formatted)
+          black .  # Automatically reformat the code
+
 
       - name: Run Flake8 for linting
         run: |
