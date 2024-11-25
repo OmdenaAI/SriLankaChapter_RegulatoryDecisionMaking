@@ -1,3 +1,89 @@
+# name: Python CI
+
+# # Trigger the workflow for pull requests and pushes
+# on:
+#   pull_request:
+#     branches:
+#       - main
+#       - develop
+#       - '*'  # Trigger on any branch
+
+#   push:
+#     branches:
+#       - main
+#       - develop
+
+# jobs:
+#   # Job for checking code formatting and linting on PR creation or update
+#   format-and-lint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Set up Python 3.x
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: '3.x'
+
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install black flake8 pre-commit
+
+#       # - name: Run Black for auto-formatting
+#       #   run: |
+#       #     black --check .  # Check formatting (fails if any file is not formatted)
+
+#       - name: Run Black for auto-formatting
+#         run: |
+#           black .  # Automatically reformat the code
+
+
+#       # - name: Run Flake8 for linting
+#       #   run: |
+#       #     flake8 --max-line-length=88 .  # Linting check
+
+#       # Run Flake8 for linting and formatting checks
+#       - name: Run Flake8 (linting)
+#         run: |
+#           flake8 --max-line-length=88 .  # Linting check with the 88 char limit
+          
+#       - name: Run pre-commit hooks
+#         run: |
+#           pre-commit run --all-files --hook-stage commit  # Run pre-commit hooks
+
+#   # Job for running tests on push to main or develop
+#   ci:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       max-parallel: 3
+#       matrix:
+#         python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']  # Multiple Python versions
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: ${{ matrix.python-version }}
+
+#       - name: Install dependencies
+#         run: |
+#           python3 -m pip install --upgrade pip
+#           pip3 install -r requirements.txt  # Install dependencies from requirements.txt
+
+#       - name: Test with pytest
+#         run: pytest  # Run tests with pytest
+
+#       - name: Lint with flake8
+#         run: flake8 . --count --show-source --statistics  # Run flake8 linting
+
+#       - name: Check formatting using black
+#         run: black --check .  # Ensure the code is formatted correctly
+
+
 name: Python CI
 
 # Trigger the workflow for pull requests and pushes
@@ -31,30 +117,29 @@ jobs:
           python -m pip install --upgrade pip
           pip install black flake8 pre-commit
 
-      # - name: Run Black for auto-formatting
-      #   run: |
-      #     black --check .  # Check formatting (fails if any file is not formatted)
-
+      # Run Black for auto-formatting
       - name: Run Black for auto-formatting
         run: |
           black .  # Automatically reformat the code
 
-
-      - name: Run Flake8 for linting
+      # Run Flake8 for linting and formatting checks
+      - name: Run Flake8 (linting)
         run: |
-          flake8 --max-line-length=88 .  # Linting check
+          flake8 --max-line-length=88 .  # Linting check with 88 character line length limit
 
+      # Run pre-commit hooks
       - name: Run pre-commit hooks
         run: |
-          pre-commit run --all-files --hook-stage commit  # Run pre-commit hooks
+          pre-commit run --all-files --hook-stage commit  # Run pre-commit hooks to ensure checks are applied
 
   # Job for running tests on push to main or develop
   ci:
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 3
+      max-parallel: 3  # Run tests in parallel to speed up execution
       matrix:
         python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']  # Multiple Python versions
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -72,8 +157,11 @@ jobs:
       - name: Test with pytest
         run: pytest  # Run tests with pytest
 
-      - name: Lint with flake8
+      # Lint the code with Flake8
+      - name: Lint with Flake8
         run: flake8 . --count --show-source --statistics  # Run flake8 linting
 
-      - name: Check formatting using black
-        run: black --check .  # Ensure the code is formatted correctly
+      # Check code formatting with Black
+      - name: Check formatting using Black
+        run: black --check .  # Ensure that the code is formatted correctly
+
