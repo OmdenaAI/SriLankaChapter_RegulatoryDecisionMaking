@@ -16,12 +16,14 @@ from scrapy.linkextractors import LinkExtractor
 
 
 class Acts19562006Spider(Spider):
-    name = 'acts_1956_2006_spider'
-    allowed_domains = ['lawnet.gov.lk', 'localhost']
-    start_urls = ['https://www.lawnet.gov.lk/acts-1956-2006-official/']
+    name = "acts_1956_2006_spider"
+    allowed_domains = ["lawnet.gov.lk", "localhost"]
+    start_urls = ["https://www.lawnet.gov.lk/acts-1956-2006-official/"]
 
     def parse(self, response: Response):
-        for link in LinkExtractor(restrict_xpaths='//*[@id="lcp_instance_0"]/li[*]/a').extract_links(response):
+        for link in LinkExtractor(
+            restrict_xpaths='//*[@id="lcp_instance_0"]/li[*]/a'
+        ).extract_links(response):
             yield Request(url=link.url, callback=self.parse_item)
 
         next_page = response.xpath('.//a[text()=">>"]/@href').get()
@@ -30,31 +32,39 @@ class Acts19562006Spider(Spider):
 
     def parse_response(self, response):
         # Parse the JSON response
-        title = response.meta.get('title')
-        url = response.meta.get('url')
+        title = response.meta.get("title")
+        url = response.meta.get("url")
         print(response.text)
         self.logger.info(f"Scraped item from URL: {url}")
-        yield {"text": response.json()["message"]["content"], "title": title, "url": url}
+        yield {
+            "text": response.json()["message"]["content"],
+            "title": title,
+            "url": url,
+        }
 
     def parse_item(self, response: Response):
-        post_content = response.css('.post-content').get()
+        post_content = response.css(".post-content").get()
 
         if not post_content:
             self.logger.warning(f"No content found for URL: {response.url}")
         else:
-            page_title = response.xpath('//title/text()').get().strip()
+            page_title = response.xpath("//title/text()").get().strip()
             text = extract(post_content, output_format="markdown", with_metadata=False)
             yield {"text": text, "title": page_title, "url": response.url}
 
+
 def main():
-    process = CrawlerProcess(settings={
-        "FEEDS": {
-            "output.json": {"format": "json"},
-        },
-    })
+    process = CrawlerProcess(
+        settings={
+            "FEEDS": {
+                "output.json": {"format": "json"},
+            },
+        }
+    )
 
     process.crawl(Acts19562006Spider)
     process.start()  # Start the crawling process
+
 
 if __name__ == "__main__":
     main()
