@@ -15,6 +15,24 @@ import os
 import csv
 
 
+def write_to_csv(contents, destination_file_relative_path):
+    script_path = os.path.dirname(__file__)
+    output_csv = os.path.join(script_path, destination_file_relative_path)
+    field_names = ['class', 'filename', 'path', 'url', 'data_origin', 'retrieved_date', 'issuing_authority', 'PDF_or_text']
+    with open(output_csv, 'w', newline='', encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=field_names)
+        writer.writeheader()  # Write the header row
+        writer.writerows(contents)  # Write the data rows
+
+
+def trim_absolute_path_tri(file_path):
+    trimmed_path = None
+    file_path_mod = file_path.split('SriLankaChapter_RegulatoryDecisionMaking')
+    if len(file_path_mod) > 1:
+        trimmed_path = file_path_mod[1].replace('\\task-1-data-collection\scraping_codes\data_source_tri\..\..\..', '')
+    return trimmed_path
+
+
 async def get_pdf_links(tri_url):
     """
     Scrapes the specified website asynchronously and returns the scraped data.
@@ -94,7 +112,7 @@ def download_pdf_and_get_info(publications, destination_folder):
         publications: A list of dictionaries, each containing PDF Name, PDF Link, and Publication Date.
         destination_folder: Relative path to the folder where you want the scraped result to be stored.
     Returns:
-        A list of dictionaries containing PDF Names and Publication Dates
+        A list of dictionaries containing PDF Names and Publication Dates and other information.
     """
     results = []
     # Counter dictionary to keep track of filenames
@@ -126,35 +144,29 @@ def download_pdf_and_get_info(publications, destination_folder):
 
             # Use Beautiful Soup to scrape the page for additional info
             soup = BeautifulSoup(response.content, 'html.parser')
-
             # Here you would define how to find publication date and other info
             # Assuming publication date is in a specific tag (modify as needed)
-            publication_date = soup.find('meta', {'name': 'date'})['content'] if soup.find('meta', {'name': 'date'}) else 'N/A'
+            publication_date = soup.find('meta', {'name': 'date'})['content'] if soup.find('meta', {'name': 'date'}) else ''
+
+            trimmed_path = trim_absolute_path_tri(pdf_path)
 
             if pdf_name:
                 results.append({
-                'pdf_name': pdf_name,
-                'publication_date': publication_date
+                'class': pub['PDF Class'],
+                'filename': pdf_name,
+                'path': trimmed_path,
+                'url': request_url,
+                'data_origin': 'scraped',
+                'retrieved_date': publication_date,
+                'issuing_authority': 'TRI ' + pub['PDF Class'],
+                'PDF_or_text': 'PDF'
                 })
         else:
             print(f"Failed to retrieve {request_url}")
+
+    # Note: This path for the csv is hardcoded now, it should be fixed to work for v0_1
+    write_to_csv(results, '..\\..\\..\\data\\task1_raw_input\\data_source_tri\\v0_0\\initial_tri.csv')
     return results
-
-
-def write_to_csv(publications_list):
-    """
-    Utility function used for testing only, this writes the PDF links scraped by get_pdf_links
-    into a csv file.
-    """
-    script_path = os.path.dirname(__file__)
-    relative_path_to_root = os.path.join(script_path, "../../../")
-    destination_file = relative_path_to_root + "data/task1_raw_input/data_source_tri/v0_0/data_with_next.csv"
-    field_names = ['PDF Name', 'PDF Link', 'Publication Date', 'PDF Class']
-    # Write to CSV
-    with open(destination_file, 'w', newline='', encoding="utf-8") as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=field_names)
-        writer.writeheader()  # Write the header row
-        writer.writerows(publications_list)  # Write the data rows
 
 
 async def scrape_website(tri_url, destination_data_folder):
@@ -170,7 +182,7 @@ async def scrape_website(tri_url, destination_data_folder):
     """
     # Create the relative path to the destination data folder
     script_path = os.path.dirname(__file__)
-    relative_path_to_root = os.path.join(script_path, "../../../")
+    relative_path_to_root = os.path.join(script_path, "..\\..\\..\\")
     destination_folder = os.path.join(relative_path_to_root, destination_data_folder)
 
     # Scrape the PDF links from the TRI website
@@ -187,7 +199,8 @@ async def scrape_website(tri_url, destination_data_folder):
 
 
 async def main():
-    res = await scrape_website('https://www.tri.lk/view-all-publications/', 'data/task1_raw_input/data_source_tri/v0_0/files/')
+    res = await scrape_website('https://www.tri.lk/view-all-publications/', 'data\\task1_raw_input\\data_source_tri\\v0_0\\files\\')
+
 
 # Entry point for the script
 if __name__ == "__main__":
