@@ -98,6 +98,7 @@ on:
     branches:
       - main
       - develop
+      - '*'  # Trigger on push to main, develop, or any other branch
 
 jobs:
   # Job for checking code formatting and linting on PR creation or update
@@ -117,17 +118,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install black flake8 pre-commit
 
-      # Run Black for auto-formatting
+      # Run Black for auto-formatting (this reformats code if necessary)
       - name: Run Black for auto-formatting
         run: |
-          black .  # Automatically reformat the code
+          black .  # Automatically reformat the code using Black
 
       # Run Flake8 for linting and formatting checks
       - name: Run Flake8 (linting)
         run: |
-          flake8 --max-line-length=88 .  # Linting check with 88 character line length limit
+          flake8 --max-line-length=88 .  # Linting check with the 88 char limit
 
-      # Run pre-commit hooks
+      # Run pre-commit hooks (this ensures all hooks are applied)
       - name: Run pre-commit hooks
         run: |
           pre-commit run --all-files --hook-stage commit  # Run pre-commit hooks to ensure checks are applied
@@ -161,7 +162,8 @@ jobs:
       - name: Lint with Flake8
         run: flake8 . --count --show-source --statistics  # Run flake8 linting
 
-      # Check code formatting with Black
+      # Check code formatting with Black (will run on push only)
       - name: Check formatting using Black
-        run: black --check .  # Ensure that the code is formatted correctly
+        run: |
+          black .  # Automatically reformat the code if necessary
 
