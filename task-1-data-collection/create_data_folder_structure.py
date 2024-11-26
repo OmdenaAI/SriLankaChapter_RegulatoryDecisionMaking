@@ -1,6 +1,6 @@
 """
-This file creates a directory structure for the data folder where raw files and any csvs
-created by the project will be stored.
+This file creates a directory structure for the data folder where raw files
+and any csvs created by the project will be stored.
 """
 import os
 
@@ -19,7 +19,8 @@ data_sources = [
 def create_data_directories():
     # Create directories for data Task 1 and Task 2
 
-    # NOTE: These are relative paths, so if this script file is moved then the following paths should also be change accordingly.
+    # NOTE: These are relative paths, so if this script file is moved then the
+    # following paths should also be change accordingly.
     script_path = os.path.dirname(__file__)
     task1_path = os.path.join(script_path, "../data/task1_raw_input")
     task2_path = os.path.join(script_path, "../data/task2_preprocessed_data")
@@ -54,6 +55,7 @@ def create_task1_directories():
 
 
 if __name__ == "__main__":
-    # Call the function to create the structure only for v0.0 without creating any CSVs
+    # Call the function to create the structure only for v0_0
+    # without creating any CSVs
     create_data_directories()
     create_task1_directories()

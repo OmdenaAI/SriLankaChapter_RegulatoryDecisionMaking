@@ -1,17 +1,14 @@
 """
-Copied from https://dagshub.com/Omdena/SriLankaChapter_RegulatoryDecisionMaking/src/main/task-1-data-collection/Scraping%20all%20ACTs/actscraper
+Copied from https://dagshub.com/Omdena/SriLankaChapter_RegulatoryDecisionMaking
+/src/main/task-1-data-collection/Scraping%20all%20ACTs/actscraper
 Code by Memoona / Roman
 
 [TODO: Anamika] Add documentation and see how to run this on some other website
 """
-import json
-import logging
-import requests
+
 from trafilatura import extract
-from typing import Collection, Any
 from scrapy import Spider, Request, CrawlerProcess
-from scrapy.http import JsonRequest, Response
-from scrapy.spiders import Rule
+from scrapy.http import Response
 from scrapy.linkextractors import LinkExtractor
 
 

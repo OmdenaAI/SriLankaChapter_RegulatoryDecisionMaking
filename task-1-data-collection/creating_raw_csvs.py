@@ -6,20 +6,24 @@ import csv
 import json
 
 SCRIPT_PATH = os.path.dirname(__file__)
-CSV_PHYSICAL_ARCHIVES_RELATIVE_PATH = "..\\data\\task1_raw_input\\data_source_physical_archives_manual\\v0_0\\v0_0_LK_tea_phyarchive_raw.csv"
-CSV_LAWNET_RELATIVE_PATH = (
-    "..\\data\\task1_raw_input\\data_source_lawnet\\v0_0\\v0_0_LK_tea_lawnet_raw.csv"
-)
-CSV_EGZ_RELATIVE_PATH = (
-    "..\\data\\task1_raw_input\\data_source_egz\\v0_0\\v0_0_LK_tea_egz_raw.csv"
-)
-CSV_TBAL_RELATIVE_PATH = (
-    "..\\data\\task1_raw_input\\data_source_tbal\\v0_0\\v0_0_LK_tea_tbal_raw.csv"
-)
-CSV_TRI_RELATIVE_PATH = (
-    "..\\data\\task1_raw_input\\data_source_tri\\v0_0\\v0_0_LK_tea_tri_raw.csv"
-)
-CSV_COMBINED_RELATIVE_PATH = "..\\data\\task1_raw_input\\v0_0_LK_combined_raw.csv"
+RAW_INPUT_REL_PATH = "..\\data\\task1_raw_input\\"
+LAWNET_V0 = "data_source_lawnet\\v0_0"
+PHY_V0 = "data_source_physical_archives_manual\\v0_0"
+EGZ_V0 = "data_source_egz\\v0_0"
+TBAL_V0 = "data_source_tbal\\v0_0"
+TRI_V0 = "data_source_tri\\v0_0"
+
+CSV_PHYARC = os.path.join(RAW_INPUT_REL_PATH, PHY_V0, "v0_0_LK_tea_phyarchive_raw.csv")
+
+CSV_LAWNET = os.path.join(RAW_INPUT_REL_PATH, LAWNET_V0, "v0_0_LK_tea_lawnet_raw.csv")
+
+CSV_EGZ = os.path.join(RAW_INPUT_REL_PATH, EGZ_V0, "v0_0_LK_tea_egz_raw.csv")
+
+CSV_TBAL = os.path.join(RAW_INPUT_REL_PATH, TBAL_V0, "v0_0_LK_tea_tbal_raw.csv")
+
+CSV_TRI = os.path.join(RAW_INPUT_REL_PATH, TRI_V0, "v0_0_LK_tea_tri_raw.csv")
+
+CSV_COMBINED = os.path.join(RAW_INPUT_REL_PATH, "v0_0_LK_combined_raw.csv")
 
 
 def write_dict_to_csv(contents, destination_file_relative_path):
@@ -45,7 +49,7 @@ def trim_absolute_path(file_path):
     trimmed_path = None
     file_path_mod = file_path.split("SriLankaChapter_RegulatoryDecisionMaking")
     if len(file_path_mod) > 1:
-        trimmed_path = file_path_mod[1].replace("\\task-1-data-collection\..", "")
+        trimmed_path = file_path_mod[1].replace("\\task-1-data-collection\\..", "")
     return trimmed_path
 
 
@@ -54,9 +58,7 @@ def create_lawnet_files_from_json(destination_csv_relative_path):
     # Also creates lawnet_acts.csv
     all_data = []
     # Define the root folder
-    root_folder = os.path.join(
-        SCRIPT_PATH, "..\\data\\task1_raw_input\\data_source_lawnet\\v0_0\\files\\Act"
-    )
+    root_folder = os.path.join(SCRIPT_PATH, RAW_INPUT_REL_PATH, LAWNET_V0, "files\\Act")
     for root, dirs, files in os.walk(root_folder):
         for file in files:
             if file.endswith(".jsonl"):  # Check if the file is a JSONL file
@@ -65,12 +67,11 @@ def create_lawnet_files_from_json(destination_csv_relative_path):
                     for line in file:
                         try:
                             data = json.loads(line)
-                            all_data.append(data)  # Append the data to the list
+                            all_data.append(data)  # Add the data to the list
                         except json.JSONDecodeError as e:
                             print(f"Error decoding JSON in file {file}: {e}")
 
-    # create a csv with class, file name, path, data origin, issuing authority, url
-    # putting issuing  authority as LAwnetb now, this is wrong
+    # create a csv for the raw data
     file_infos = []
     for row in all_data:
         filename = f"ACT_{all_data.index(row) + 1}.txt"
@@ -103,8 +104,7 @@ def create_egz_csv(destination_csv_relative_path):
     file_infos = []
     # Define the root folder
     root_folder = os.path.join(
-        SCRIPT_PATH,
-        "..\\data\\task1_raw_input\\data_source_egz\\v0_0\\files\\Regulation",
+        SCRIPT_PATH, RAW_INPUT_REL_PATH, EGZ_V0, "files\\Regulation"
     )
     for root, dirs, files in os.walk(root_folder):
         for file in files:
@@ -132,8 +132,7 @@ def create_tbal_csv(destination_csv_relative_path):
     file_infos = []
     # Define the root folder
     root_folder = os.path.join(
-        SCRIPT_PATH,
-        "..\\data\\task1_raw_input\\data_source_tbal\\v0_0\\files\\Circulers",
+        SCRIPT_PATH, RAW_INPUT_REL_PATH, TBAL_V0, "files\\Circulers"
     )
     for root, dirs, files in os.walk(root_folder):
         for file in files:
@@ -147,7 +146,7 @@ def create_tbal_csv(destination_csv_relative_path):
                         "url": "",
                         "data_origin": "scraped",
                         "retrieved_date_of_issuance": "",
-                        "issuing_authority": "Tea Board Analytical Lab Circulers",
+                        "issuing_authority": ("Tea Board Analytical Lab Circulers"),
                         "retrieved_topic": "",
                         "PDF_or_text": "PDF",
                     }
@@ -165,8 +164,7 @@ def create_phyarch_csv(destination_csv_relative_path):
     file_infos = []
     # Define the root folder
     root_folder = os.path.join(
-        SCRIPT_PATH,
-        "..\\data\\task1_raw_input\\data_source_physical_archives_manual\\v0_0\\files\\Circulers",
+        SCRIPT_PATH, RAW_INPUT_REL_PATH, PHY_V0, "files\\Circulers"
     )
     for root, dirs, files in os.walk(root_folder):
         for file in files:
@@ -182,8 +180,10 @@ def create_phyarch_csv(destination_csv_relative_path):
                     "issuing_authority": "Tea Board Circulers",
                     "retrieved_topic": "",
                     "PDF_or_text": "",
+                    # PDF_or_text is left blank because it requires some more
+                    # steps to decide this for the manual documents
                 }
-            )  # PDF_or_text is left blank because it requires some more steps to decide this for the manual documents
+            )
 
     # Write to a CSV file
     write_dict_to_csv(file_infos, destination_csv_relative_path)
@@ -204,20 +204,20 @@ def combine_csv_files(file_list, output_file):
 
 
 if __name__ == "__main__":
-    create_lawnet_files_from_json(CSV_LAWNET_RELATIVE_PATH)
-    create_egz_csv(CSV_EGZ_RELATIVE_PATH)
-    create_tbal_csv(CSV_TBAL_RELATIVE_PATH)
-    create_phyarch_csv(CSV_PHYSICAL_ARCHIVES_RELATIVE_PATH)
+    create_lawnet_files_from_json(CSV_LAWNET)
+    create_egz_csv(CSV_EGZ)
+    create_tbal_csv(CSV_TBAL)
+    create_phyarch_csv(CSV_PHYARC)
     # TRI csv is created from tri_scraper.py
 
     # combine the files into one csv
     csv_paths = [
-        os.path.join(SCRIPT_PATH, CSV_LAWNET_RELATIVE_PATH),
-        os.path.join(SCRIPT_PATH, CSV_EGZ_RELATIVE_PATH),
-        os.path.join(SCRIPT_PATH, CSV_TBAL_RELATIVE_PATH),
-        os.path.join(SCRIPT_PATH, CSV_TRI_RELATIVE_PATH),
-        os.path.join(SCRIPT_PATH, CSV_PHYSICAL_ARCHIVES_RELATIVE_PATH),
+        os.path.join(SCRIPT_PATH, CSV_LAWNET),
+        os.path.join(SCRIPT_PATH, CSV_EGZ),
+        os.path.join(SCRIPT_PATH, CSV_TBAL),
+        os.path.join(SCRIPT_PATH, CSV_TRI),
+        os.path.join(SCRIPT_PATH, CSV_PHYARC),
     ]
-    destination_csv = os.path.join(SCRIPT_PATH, CSV_COMBINED_RELATIVE_PATH)
+    destination_csv = os.path.join(SCRIPT_PATH, CSV_COMBINED)
 
     combine_csv_files(csv_paths, destination_csv)
