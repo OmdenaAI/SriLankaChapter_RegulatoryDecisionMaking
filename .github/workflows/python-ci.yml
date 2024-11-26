@@ -147,6 +147,7 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
+          # pip install pre-commit black flake8 autopep8  # Install pre-commit along with black, flake8, etc.
           pip3 install -r requirements.txt  # Install dependencies from requirements.txt
 
       - name: Test with pytest
