@@ -23,7 +23,7 @@ pdf_parser = LlamaParse(result_type='markdown', num_workers=8)
 text_parser = LlamaParse(result_type='markdown', Set_fast_mode=True, num_workers=8)
 
 def reformat_path_(path):
-    path = re.sub('/content/drive/MyDrive/Omdena_Challenge/' ,'',path)
+    path = re.sub('/content/drive/MyDrive/Omdena_Challenge/' ,'preprocessing_pipeline/',path)
     return path
 
 

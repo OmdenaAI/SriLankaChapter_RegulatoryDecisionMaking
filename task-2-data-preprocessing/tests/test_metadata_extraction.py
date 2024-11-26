@@ -6,7 +6,7 @@ import unittest
 import ast
 from unittest.mock import MagicMock
 
-from preprocessing_pipeline.metadata_extraction import clean_text_for_metadata_extraction, extract_metadata
+from src.metadata_extraction import clean_text_for_metadata_extraction, extract_metadata
 
 
 class TestMetadataExtraction(unittest.TestCase):
