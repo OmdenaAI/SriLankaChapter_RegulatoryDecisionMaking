@@ -116,22 +116,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install black flake8 pre-commit autopep8
+          pip install pre-commit black flake8 autopep8  # Ensure pre-commit is installed along with other tools
 
-      # Run Black for auto-formatting (this reformats code if necessary)
-      - name: Run Black for auto-formatting
+      - name: Install pre-commit hooks
         run: |
-          black .  # Automatically reformat the code using Black
-
-      # Run autopep8 to fix additional PEP8 issues (like unused imports)
-      - name: Auto-fix with autopep8
-        run: |
-          autopep8 --in-place --aggressive --max-line-length 88 .  # Automatically fix PEP8 issues
-
-      # Run Flake8 for linting and formatting checks
-      - name: Run Flake8 (linting)
-        run: |
-          flake8 --max-line-length=88 .  # Linting check with the 88 char limit
+          pre-commit install  # Installs the hooks defined in .pre-commit-config.yaml
 
       # Run pre-commit hooks (this ensures all hooks are applied)
       - name: Run pre-commit hooks
@@ -163,12 +152,10 @@ jobs:
       - name: Test with pytest
         run: pytest  # Run tests with pytest
 
-      # Check code formatting with Black (will run on push only)
-      - name: Check formatting using Black
+      # Run pre-commit hooks (for additional checks)
+      - name: Run pre-commit hooks
         run: |
-          black .  # Automatically reformat the code if necessary
+          pre-commit run --all-files --hook-stage commit  # This runs pre-commit hooks during the CI pipeline
 
-      # Lint the code with Flake8
-      - name: Lint with Flake8
-        run: flake8 . --count --show-source --statistics  # Run flake8 linting
+
 
