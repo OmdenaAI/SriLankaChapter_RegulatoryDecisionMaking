@@ -158,12 +158,14 @@ jobs:
       - name: Test with pytest
         run: pytest  # Run tests with pytest
 
-      # Lint the code with Flake8
-      - name: Lint with Flake8
-        run: flake8 . --count --show-source --statistics  # Run flake8 linting
-
       # Check code formatting with Black (will run on push only)
       - name: Check formatting using Black
         run: |
           black .  # Automatically reformat the code if necessary
+
+      # Lint the code with Flake8
+      - name: Lint with Flake8
+        run: flake8 . --count --show-source --statistics  # Run flake8 linting
+
+
 
