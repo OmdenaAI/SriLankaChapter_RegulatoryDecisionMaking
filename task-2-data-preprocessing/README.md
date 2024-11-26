@@ -36,9 +36,12 @@ GROQ_API_KEY = your_api_key
 
 2. Run the script
 ```bash
+cd preprocessing_pipeline
 python main.py <input_csv_path> <output_csv_path>
 ```
 
 
-
+### arguments
+input_csv_path : path to a csv containing at least the paths to the file to process and the nature of the document (txt or pdf) 
+output_csv_path : where to save the result ,  a processed csv with the extracted content and metadatasa path
 
