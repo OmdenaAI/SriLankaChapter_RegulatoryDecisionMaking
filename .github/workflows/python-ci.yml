@@ -86,7 +86,6 @@
 
 name: Python CI
 
-# Trigger the workflow for pull requests and pushes
 on:
   pull_request:
     branches:
@@ -116,16 +115,20 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pre-commit black flake8 autopep8  # Ensure pre-commit is installed along with other tools
+          pip install pre-commit black flake8 autopep8
 
       - name: Install pre-commit hooks
         run: |
-          pre-commit install  # Installs the hooks defined in .pre-commit-config.yaml
+          pre-commit install  # Install pre-commit hooks
+
+      - name: Clean pre-commit cache
+        run: |
+          pre-commit clean  # Clean pre-commit cache to avoid stale hooks
 
       # Run pre-commit hooks (this ensures all hooks are applied)
       - name: Run pre-commit hooks
         run: |
-          pre-commit run --all-files --hook-stage commit  # Run pre-commit hooks to ensure checks are applied
+          pre-commit run --all-files --hook-stage commit  # Run pre-commit hooks on all files
 
   # Job for running tests on push to main or develop
   ci:
@@ -147,7 +150,6 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          # pip install pre-commit black flake8 autopep8  # Install pre-commit along with black, flake8, etc.
           pip3 install -r requirements.txt  # Install dependencies from requirements.txt
 
       - name: Test with pytest
@@ -156,7 +158,6 @@ jobs:
       # Run pre-commit hooks (for additional checks)
       - name: Run pre-commit hooks
         run: |
-          pre-commit run --all-files --hook-stage commit  # This runs pre-commit hooks during the CI pipeline
-
+          pre-commit run --all-files --hook-stage commit  # Run pre-commit hooks during CI pipeline
 
 
