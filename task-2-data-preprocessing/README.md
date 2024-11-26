@@ -36,7 +36,6 @@ GROQ_API_KEY = your_api_key
 
 2. Run the script
 ```bash
-cd preprocessing_pipeline
 python main.py <input_csv_path> <output_csv_path>
 ```
 
