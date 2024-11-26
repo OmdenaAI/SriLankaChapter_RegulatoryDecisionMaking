@@ -1,0 +1,21 @@
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/psf/black
+    rev: 23.3.0  # Use the latest stable version of Black
+    hooks:
+      - id: black
+        language_version: python3  # Make sure to use the correct Python version
+
+  - repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v1.8.0  # Use the latest version of autopep8
+    hooks:
+      - id: autopep8
+        additional_dependencies:
+          - autopep8==1.8.0
+        args: ['--max-line-length=88', '--in-place', '--aggressive']
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: v6.0.0  # Use the latest version of Flake8
+    hooks:
+      - id: flake8
+        args: ['--max-line-length=88']
