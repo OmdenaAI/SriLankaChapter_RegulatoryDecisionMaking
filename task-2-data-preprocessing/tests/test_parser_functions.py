@@ -6,7 +6,7 @@ import unittest
 import pandas as pd
 from io import StringIO
 from llama_index.core.schema import Document
-from sri_lanka_chapter_.parser_functions import (
+from preprocessing_pipeline.parser_functions import (
     document_to_dict,
     documents_to_dicts,
     documents_to_dataframe,

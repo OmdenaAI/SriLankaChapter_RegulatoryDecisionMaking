@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import unittest
 import pandas as pd
-from sri_lanka_chapter_.cleaning_utils import (
+from preprocessing_pipeline.cleaning_utils import (
     merge_markdown_content,
     parse_json_from_string,
     append_merged_df_to_all_data,
