@@ -1,0 +1,54 @@
+# INSTITUTE
+
+# ADVISORY CIRCULAR No_PT 6
+
+Issued in March 2004
+
+Serial No: 1/04
+
+# MOISTURE LEVELS OF BLACK TEA
+
+(This replaces the Advisory Circular No. T7, Serial No. 2/81)
+
+The most important factor that determines the keeping qualities of tea is the moisture content. At high moisture levels the deterioration of the desirable tea characteristics is faster and these teas are found to lose briskness with time and end up as flat teas. The moisture content of tea could be kept within the desired limits by the following:
+
+- Proper drying of tea.
+- Preventing excessive moisture absorption during grading and packing.
+- Packing tea in proper containers such as plywood tea lined with aluminium foil or multiwall paper sacks.
+
+The moisture content of properly fired dhools when sampled at the drier mouth should be in the region of 3% and that of the tea at the time of packing should preferably be less than 5%.
+
+In order to dry tea properly, the following operating conditions are recommended for the ECP Drier and the Fluid Bed Drier (FBD):
+
+# ECP
+
+- a) Inlet air temperature of 190 -195 °F (88 - 91 °C).
+- b) Exhaust air temperature recorded by a thermometer placed one-third the length away from feed end and 6 inches (15.2 cm) above top tray of 125-135 °F (52 - 57 °C).
+- c) Residence time (i.e. time through the drier) of 21 minutes.
+- d) Air volume of 30 cfm per lb (1.87 cubic meters per minute per kg) moisture evaporated per hour, with uniform distribution over the top tray: By-pass valve at fully closed position.
+- e) Adjustment of feed rate so as to maintain recommended exhaust temperature.
+- f) The fall through of tea should be minimized by having suitable tray perforations.
+
+# FBD
+
+- a) Inlet air temperature of 260 °F (127 °C).
+- b) Height of discharge weir in drier at 3 - 4 inches (8.9 - 10 cm).
+- c) Tea bed temperature near discharge end (recorded by a thermo probe immersed 6 to 8 inches (15.2 - 20.3 cm) from the discharge weir of the drying chamber) at 190-200 °F (88 - 93 °C).
+- d) Air volume of 2000-2500 cfm (56.6 - 71 cubic meters per minute) per drying section.
+- e) Volume control dampers adjusted so as to get well fluidized tea bed in all sections.
+- f) Adjustment of feed rate so as to maintain the recommended tea bed temperature near discharge end.
+# The absorption of certain amount of moisture by tea prior to and during grading
+
+as well as packing is inevitable but care should be taken to prevent excessive gain. One of the first precautions to be taken is to maintain the grading and packing rooms in a reasonably dry condition. Un-graded teas should not be left lying about in heaps but should be stored in covered boxes. Graded teas should be binned as soon as possible.
+
+Tea should be graded daily and must not be left exposed longer than necessary; this should be carried out as a routine and records should be maintained. The methods of determining moisture content of dhool samples and invoice samples should be given in another Advisory Circular.
+
+The determination of moisture content of tea and calibration of the Infra-red Moisture Meter are given in another Advisory Circular.
+
+The Tea Research Institute of Sri Lanka
+
+Talawakelle.
+
+Copyright © The Tea Research Institute of Sri Lanka 2004
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval system without permission in writing from the Director; The Tea Research Institute of Sri Lanka

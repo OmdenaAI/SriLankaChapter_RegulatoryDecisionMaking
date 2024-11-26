@@ -1,0 +1,61 @@
+# ADVISORY CIRCULAR
+
+# No.PM 4 TRI:
+
+Issued in: February 2024
+
+Serial No. 17/24
+
+# CONTROL OF WHITE GRUBS
+
+This Advisory Circular Supersedes Advisory Circular PM 7 Serial No. 04/02 issued in November 2002 and related previous Advisory Circulars and links to PU 4)
+
+# 1. Introduction
+
+The root-feeding larvae of scarabaeid beetles (chafers or cockchafers) are commonly known as "white grubs" and about 90% of the reported damage in tea is in new clearings. Damage is also seen occasionally in fuel wood clearings. The damage in new clearings is significant in the following areas: Udapussellawa, Dimbula, Maturata, Pundaluoya, Pussellawa, Kotmale, Madulsima, Dickoya, Welimada, Nuwara Eliya, Haputale, Dolosbage, Hewaheta, Passara, Ratnapura and Galle. It is recommended that the plantations in Udapussellawa, Dimbula and Maturata districts should protect their new clearings from white grub damage as a routine practice through prophylactic treatments. Also, proper vigilance should be maintained to detect early infestation of white grubs.
+
+# 2. Cyclic Pattern of White Grub Development
+
+The adult beetles deposit their eggs in the soil from about March to June. Large numbers of these beetles are often attracted to lights in March/April. The larvae start emerging from eggs from about June until about August. The ovipositing beetles can be encountered in the soil from June to November. Pupation commences generally in October, reaching a peak in January of the following year. The chronological pattern of the life cycle of cockchafers is the same in both south-west and north-east monsoon zones.
+
+# 3. Damage Symptoms
+
+Of the different species of white grubs found in tea lands, Holotrichia disparilis and Microtrichia costata cause economically significant injury to young plants in new clearings. The grubs can move from plant to plant; H. disparilis often chews the roots off completely, leaving a callused stump from which the plant may attempt to regenerate new roots. The grubs can also ring-bark the young plants at the collar. M. costata may also attack shade trees such as Acacia decurrence. Anomala superflua is a low country species attacking mainly timber species like Teak and also nursery plants and occasionally tea roots. Leucopholis pinguis attacks grasses, at times completely devouring the roots like in Mana and not allowing the grasses to recover. Damage to Guatemala does not generally kill the grass as adventitious roots develop from nodes above the damaged section.
+
+# 4. Attraction to Organic Matter
+
+All attacks have been encountered in soils rich in decaying organic matter. The grubs are found predominantly in areas of the fields having high organic matter content and hardly any in sandy and gravelly areas. When compost is used in planting holes and or as soil amendments, white grub adults could be attracted.
+# Integrated Approach to Manage White Grubs
+
+# 5.1 Land Preparation
+
+Forking and cultivation of soil during land preparation will facilitate the exposure of white grubs to predators such as birds.
+
+# 5.2 Light Traps
+
+Light traps placed during March-May in white grub-prone areas will trap adult beetles in dispersal flight.
+
+# 5.3 Special Care with Agronomic Operations
+
+To avoid white grub adult attraction, special attention and care should be taken for when compost is used in planting holes and or as soil amendments.
+
+- Live mulches such as Mana, grasses etc. are used.
+- Organic matter is broadcast in tea lands i.e. compost; reclaimable tea and paddy husk etc.
+
+# 5.4 Artificial Mulching
+
+Artificial agriculture mulch should be done prior to the egg laying period which usually begins from March to May. Artificial agriculture mulch restricts egg laying by adult beetles around tea bushes.
+
+# 5.5 Chemical Control
+
+The new clearings should be protected from the grubs during June-October. The grubs have an extended feeding period of about 8 months. Tea plants can succumb to grub damage during the 1-3 years. Repeat application may be necessary in the 2nd year if the grubs are active in the field during October.
+
+Please refer to Advisory Circular PU 4 to select recommended chemicals and dosages.
+
+Tea Research Institute of Sri Lanka
+
+Talawakelle
+
+COPYRIGHT
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, scanning or information storage and retrieval system without the prior written permission from the Director; Tea Research Institute of Sri Lanka, Talawakelle.
