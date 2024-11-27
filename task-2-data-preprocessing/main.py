@@ -25,7 +25,7 @@ groq_api = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=groq_api)
 
 parser = argparse.ArgumentParser(description="Pipeline to preprocess a csv file for RAG")
-parser.add_argument("df_path",help='Path where the dataframe to process is located')
+parser.add_argument("df_path",help='Path where the csv to process is located')
 parser.add_argument('save_path',help = 'Path where to save the processed dataframe')
 
 async def main(df_path, save_path):
