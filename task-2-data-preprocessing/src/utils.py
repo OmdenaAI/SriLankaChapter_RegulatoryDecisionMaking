@@ -8,7 +8,8 @@ from src.cleaning_utils import (merge_markdown_content,
                    parse_json_from_string,
                    append_merged_df_to_all_data,
                    remove_no_content_rows,
-                   normalize_markdown)
+                   normalize_markdown,
+                   process_row)
 
 from src.metadata_extraction import extract_metadata
 
@@ -33,7 +34,7 @@ def log_errors(func):
 @log_errors
 def read_csv(df_path):
     logging.info("Reading the CSV")
-    df = pd.read_csv(df_path)
+    df = pd.read_csv(df_path).head(1)
     df.fillna("", inplace=True)
     logging.info("Reading complete")
     return df
@@ -42,7 +43,7 @@ def read_csv(df_path):
 @log_errors
 def process_documents(df):
     logging.info("Beginning of the parsing")
-    processed_documents = asyncio.run(process_and_save_df(df, reformat_path=True))
+    processed_documents = asyncio.run(process_and_save_df(df))
     processed_df = documents_to_dataframe(processed_documents)
     logging.info("Parsing complete")
     return processed_df
@@ -57,7 +58,6 @@ def extract_and_merge_metadata(processed_df, client):
     df_metadata['file_name'] = processed_df['metadata'].apply(lambda x: x.get('file_name', None))
     # Extracting the 'content' 
     df_metadata['markdown_content'] = processed_df['text']
-    print(df_metadata.columns)
 
     merged_df = df_metadata.groupby('file_name', as_index=False).apply(merge_markdown_content)
     merged_df = merged_df.reset_index(drop=True)
@@ -85,11 +85,10 @@ def extract_and_merge_metadata(processed_df, client):
 @log_errors
 def clean_and_save_data(df, merged_df, save_path):
     logging.info("Cleaning the dataset")
-    print(df.columns)
-    print(merged_df.columns)
     df = append_merged_df_to_all_data(df, merged_df)
     df = remove_no_content_rows(df).drop(columns=["is_empty"])
     df["normalized_content"] = df["markdown_content"].apply(normalize_markdown)
+    df['markdown_path'] = df.apply( process_row, axis=1)
     df["is_duplicate"] = df.duplicated(subset="normalized_content", keep="first")
     df = df[~df["is_duplicate"]].copy()
     df = df.drop(columns=["is_duplicate", "normalized_content"])

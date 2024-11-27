@@ -1,5 +1,6 @@
 import ast
 import re
+import os
 import pandas as pd
 
 
@@ -73,3 +74,40 @@ def normalize_markdown(text):
     text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
     text = text.strip()  # Remove leading/trailing whitespace
     return text
+
+
+# Function to save markdown content to a file
+def save_markdown(content, markdown_path):
+    with open(markdown_path, 'w') as f:
+        f.write(content)
+
+
+def reformat_path_(path):
+    path = re.sub('/content/drive/MyDrive/Omdena_Challenge/' ,'preprocessing_pipeline/',path)
+    return path
+
+# Function to process each row and save markdown
+def process_row(row , reformat_path = False):
+    # Extract filename and path
+    pdf_filename = row['filename']  # e.g., 'file1.pdf'
+
+    # Strip '.pdf' or '.txt' extension and replace with '.md'
+    filename_without_extension = os.path.splitext(pdf_filename)[0]  # e.g., 'file1'
+    markdown_filename = f"{filename_without_extension}.md"          # e.g., 'file1.md'
+
+    # Determine the source file path for markdown
+    if row['PDF_or_text'] == 'PDF':
+        markdown_path = os.path.join(os.path.dirname(row['path']), markdown_filename)  # Use path for PDF
+        markdown_content = row['markdown_content']  # Directly use markdown_content for PDF
+    elif row['PDF_or_text'] == 'Text':
+        markdown_path = os.path.join(os.path.dirname(row['text_path']), markdown_filename)  # Use text_path for Text
+        markdown_content = row['markdown_content']  # Directly use markdown_content for Text (already extracted)
+
+    if reformat_path:
+        markdown_path = reformat_path_(markdown_path)
+        
+    # Save the markdown content to the file
+    save_markdown(markdown_content, markdown_path)
+
+    # Return the constructed markdown path to be used in the DataFrame
+    return markdown_path

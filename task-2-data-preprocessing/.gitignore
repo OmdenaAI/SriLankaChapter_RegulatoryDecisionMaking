@@ -6,3 +6,4 @@ test.py
 new_LK_tea_dataset
 preprocessing_pipeline
 .venv
+src/__pycache__

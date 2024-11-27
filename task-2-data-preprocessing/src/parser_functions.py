@@ -27,50 +27,42 @@ def reformat_path_(path):
     return path
 
 
-async def process_pdf_documents(pdf_paths):
-    """Async function to process PDF documents using LLamaparse"""
-    if pdf_paths:  # Only process if there are PDF paths
-        file_extractor = {".pdf": pdf_parser}
-        pdf_documents = SimpleDirectoryReader(input_files=pdf_paths, file_extractor=file_extractor).load_data()
-
-        return pdf_documents
-    return []
-
-async def process_text_documents(text_paths):
-    """Async function to process Text documents using LLamaparse"""
-    if text_paths:  # Only process if there are text paths
-        file_extractor = {".txt": text_parser}
-        text_documents = SimpleDirectoryReader(input_files=text_paths, file_extractor=file_extractor).load_data()
-        return text_documents
-    return []
 
 
 async def process_and_save_df(all_data , reformat_path = False):
     """Async function to process the DataFrame and save to CSV"""
-    # Collect file paths for PDFs and Text documents
-    pdf_paths = all_data[all_data['PDF_or_text'] == 'PDF']['path'].tolist()
-    text_paths = all_data[all_data['PDF_or_text'] == 'Text']['text_path'].tolist()
 
+    pdf_paths = all_data[all_data['PDF_or_text'] == 'PDF']['path'].tolist()
     if reformat_path:
         pdf_paths = [reformat_path_(path) for path in pdf_paths]
+
+    if pdf_paths :
+        pdf_file_extractor = {".pdf": pdf_parser}
+        pdf_reader = SimpleDirectoryReader(input_files=pdf_paths, file_extractor=pdf_file_extractor)
+        pdf_documents = await pdf_reader.aload_data()
+    else:
+        pdf_documents = []
+    
+    text_paths = all_data[all_data['PDF_or_text'] == 'Text']['text_path'].tolist()
+    if reformat_path:
         text_paths = [reformat_path_(path) for path in text_paths]
+    if text_paths :
+        text_file_extractor = {".txt": text_parser}
+        text_reader = SimpleDirectoryReader(input_files=text_paths, file_extractor=text_file_extractor)
+        text_documents = await text_reader.aload_data()
+    else :
+        text_documents = []
 
-
-    # Process PDFs and Texts concurrently
-    pdf_documents = await process_pdf_documents(pdf_paths)
-    text_documents = await process_text_documents(text_paths)
 
     # Combine the results
-    all_documents = pdf_documents + text_documents
+    processed_documents = pdf_documents + text_documents
 
-    if all_documents:
-        return all_documents
+    if processed_documents:
+        return processed_documents
     else:
         print("No documents found for processing.")
         return []
     
-
-
 
 
 def document_to_dict(document: Document):

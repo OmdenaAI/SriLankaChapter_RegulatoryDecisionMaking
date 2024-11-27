@@ -32,7 +32,6 @@ async def main(df_path, save_path):
     try:
         df = read_csv(df_path)
         processed_df = process_documents(df)
-        print(processed_df.columns)
         merged_df = extract_and_merge_metadata(processed_df, client)
         clean_and_save_data(df, merged_df, save_path)
     except Exception as e:
