@@ -150,10 +150,8 @@ Diagram showing initial and final stands of mixed shade trees
 
 # Talawakele
 
-Copyright &copy; The Tea Research Institute of Sri Lanka 2003
 
-# COPYRIGHT
-
+# 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, including photocopying, recording or information storage and retrieval system without permission in writing from the Director; The Tea Research Institute of Sri Lanka.
 
 The scientific name of the Albizia moluccana has been revised as Paraserianthes falcataria (L.) Nielsen:

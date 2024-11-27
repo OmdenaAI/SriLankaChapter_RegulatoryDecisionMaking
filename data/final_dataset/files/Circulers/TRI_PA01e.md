@@ -23,8 +23,6 @@ Plants are allowed to be well established in the field and grow as healthy plant
 
 # Talawakelle
 
-Copyright &copy; The Tea Research Institute of Sri Lanka @ 2001
 
-# COPYRIGHT
-
+# 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval system without permission in writing from the Director; The Tea Research Institute of Sri Lanka.

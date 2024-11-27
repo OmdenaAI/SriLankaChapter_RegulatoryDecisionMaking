@@ -135,9 +135,7 @@ considered as the only solution for every constraint encountered in tea fields.
 
 Talawakelle
 
-Copyright The Tea Research Institute of Sri Lanka 2016
 
-COPYRIGHT
 
 All rights reserved No part of this publication may be reproduced or transmitted in any
 

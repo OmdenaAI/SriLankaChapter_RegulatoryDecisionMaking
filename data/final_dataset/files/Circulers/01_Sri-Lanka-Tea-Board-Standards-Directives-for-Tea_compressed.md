@@ -216,7 +216,6 @@ A-Acaricide; F-Fungicide; I-Insecticide; N-Nematicide; W-Weedicides; N/A-Not App
 
 An issuance of updated Sri Lanka Tea Board Standards/ Guidelines for tea is subject to periodical revision, as decided by the Sri Lanka Tea Board.
 
-COPYRIGHT
 
 All right reserved. No part of this Circular may be reproduced or transmitted in any form or by any means, electronic or mechanical, including social media, photocopying, recording or information storage and retrieval, without permission in writing from the Director General, Sri Lanka Tea Board.
 
@@ -349,7 +348,6 @@ Ref: D(AS), SLTB – MQS Issue 0 2/ Other Origin: January, 2021
 
 An issuance of updated Sri Lanka Tea Board Directives for tea is subject to periodical revision, as decided by the Sri Lanka Tea Board.
 
-COPYRIGHT
 
 All right reserved. No part of this Circular may be reproduced or transmitted in any form or by any means, electronic or mechanical, including social media, photocopying, recording or information storage and retrieval, without permission in writing from the Director General, Sri Lanka Tea Board.
 

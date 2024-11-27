@@ -101,6 +101,5 @@ Envelope forking is beneficial for soil aeration and root growth. It could be do
 
 The Tea Research Institute of Sri Lanka, Talawakelle.
 
-Copyright - The Tea Research Institute of Sri Lanka © 2013
 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval system without permission in writing from the Director, The Tea Research Institute of Sri Lanka.

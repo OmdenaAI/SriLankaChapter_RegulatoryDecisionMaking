@@ -153,8 +153,7 @@ Suitability criteria listed below are based on morphological characters and/or o
 | | | | |10| | | | | | | |23| | | |
 # The Tea Research Institute of Sri Lanka
 
-# Copyright
-
+# 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director, The Tea Research Institute of Sri Lanka.
 
 2002
