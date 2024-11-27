@@ -49,6 +49,4 @@ Apart from protecting the young tea plants from wind damage, the above green man
 
 # Talawakele
 
-Copyright - The Tea Research Institute of Sri Lanka @ 2001
 
-Copyright by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval system without permission in writing from the Director; The Tea Research Institute of Sri Lanka:

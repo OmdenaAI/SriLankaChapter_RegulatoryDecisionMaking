@@ -182,5 +182,4 @@ In this system, tea can be planted at a spacing of 1.0 x 0.6 m (3.5 x 2.0 ft) or
 Tea Research Institute of Sri Lanka
 Talawakelle
 
-COPYRIGHT
 All rights reserved. No parts of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director, Tea Research Institute of Sri Lanka.

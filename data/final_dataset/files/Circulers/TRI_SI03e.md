@@ -73,6 +73,4 @@ Tea Research Institute of Sri Lanka
 
 Talawakele
 
-Copyright Tea Research Institute 2003
 
-COPYRIGHT in any form or by any means, electronic or mechanical, including photocopying, AII rights reserved. No part of this publication may be reproduced or transmitted recording or information storage and retrieval system without permission in writing from the Director; Tea Research Institute of Sri Lanka.

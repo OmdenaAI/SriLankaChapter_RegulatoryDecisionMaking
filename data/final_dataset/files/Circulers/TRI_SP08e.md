@@ -88,6 +88,5 @@ It is necessary that the total cost of analysis should be paid prior to commenci
 
 The analysis is being done on the strict understanding that neither the Tea Research Board nor the Tea Research Institute of Sri Lanka will be involved in any litigation, nor will any officers employed by the above Board or any of its Divisions or its centres be required to answer summons to witness in any legal action or dispute arising from the results of this or any other analysis of these or similar samples.
 
-COPYRIGHT
 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director; Tea Research Institute of Sri Lanka.

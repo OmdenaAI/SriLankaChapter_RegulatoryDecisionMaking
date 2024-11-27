@@ -63,8 +63,6 @@ The gravel content is measured by passing soil through a 2 mm mesh, or visually.
 
 The Tea Research Institute of Sri Lanka, Talawakelle.
 
-Copyright - The Tea Research Institute of Sri Lanka 2002
 
-COPYRIGHT
 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means; electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director; The Tea Research Institute of Sri Lanka.

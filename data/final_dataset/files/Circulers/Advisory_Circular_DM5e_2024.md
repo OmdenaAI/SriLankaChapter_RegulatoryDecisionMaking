@@ -63,6 +63,5 @@ Tea Research Institute of Sri Lanka
 
 Talawakelle
 
-COPYRIGHT
 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means; electronic or mechanical, including photocopying, recording, scanning or information storage and retrieval system without the prior written permission from the Director; Tea Research Institute of Sri Lanka, Talawakelle
