@@ -1,0 +1,73 @@
+# ADVISORY CIRCULAR No_PM 2
+
+Issued in: February 2024
+
+Serial No. 12/24
+
+# MANAGEMENT OF SHOT-HOLE BORER
+
+This Advisory Circular supersedes the Advisory Circular PM 2 with Serial No. 02/03 issued in February 2003 and related previous Advisory Circulars and links with Advisory Circular PU 4 and PM 1.
+
+# 1. Introduction
+
+Shot-hole borer (SHB) (Xyleborus fornicatus Eichh:), synonym: Euwallacea fornicatus occurs in all tea-planting regions in Sri Lanka and is one of the key insect pests in elevations between 150 m to 1500 m. However, it also appears in elevations outside this range as a pest.
+
+# Immature Tea
+
+The main stems and main branches of immature tea are susceptible to SHB. Protection of the main stem and main branches which give rise frame of the tea bush is vital.
+
+# Mature Tea
+
+The immediate and direct damage that could result from heavy shot-hole borer infestation is due to breakage of primary branches arising from prune cuts. In the case of a new branch, after pruning, the basal section reaches the particular maturity that is preferred by the borer from about the 12th to 14th month. Such a branch generally remains susceptible to attack till about 36 months depending on the growth of the branch. Therefore, this period of primary branch susceptibility warrants protection from borer infestation.
+
+# Formation of Wood Rot
+
+It is important to prevent wood-rot formation in the stems that have been galleried by the borer. Microbial organisms that cause wood-rot enter through the unhealed gallery openings as well as through the galleries exposed by pruning. Unless removed at the pruning time, such rotted wood can, in the long run, cause protracted debilitation of the bush frame resulting in crop loss.
+
+# 2. Integrated Management of Shot-hole Borer
+
+The following Integrated Pest Management strategies can be adopted to overcome the shot-hole borer damage.
+
+# 2.1 Planting of Tolerant Cultivars to Shot-hole Borer
+
+There is hardly any cultivar that is totally resistant to shot-hole borer. The mostly one can do is to select cultivars that show tolerance to shot-hole borer and have high innate capacity for callusing. Those that have shot-hole borer tolerance exhibit compensatory growth to a great extent. Those with high callusing properties have the ability to heal the wounds faster than others. If the wounds heal fast, there is no opportunity for wood-rot organisms to act on the dead cells of the wounds. However, both these factors (callusing and compensatory growth) can interrupt physiological activity in the main stem and retard the growth of the plant. Refer to the Advisory Circular PN to select tolerant cultivars appropriate to the region/s.
+
+# 2.2 Field Planting of Shot-hole Borer Uninfested Nursery Plants
+
+Shot-hole borer uninfested nursery plants should be used for field planting.
+# 2.3 Sanitary Measures at Pruning
+
+Prune-time sanitation measures should be adopted from the first proper pruning onwards to minimize wood rot that is induced by borer galleries: The dead snags (dieback that has undergone wood-rot) should be removed until healthy tissue underneath is exposed. Galleried parts of a branch should be shaved away until a clean prune cut remains. The large prune cuts should be painted with appropriate wound dressing/protective paint: Refer to the Advisory Circular PU 2.
+
+# 2.4 Burying of Pruning
+
+Burying of pruning besides its advantages of waste recycling and organic matter supply to tea lands, will destroy residual populations of SHB in infested branches and thereby minimize the chances of re-infestation.
+
+# 2.5 Maintain Bush Vigor to Encourage Growth Compensation
+
+Good Agricultural Practices on crop and land management recommended by the Tea Research Institute should be adopted.
+
+# 2.6 Chemical Control
+
+# 2.6.1 New Clearings
+
+All new clearings located in areas prone to SHB infestation (mid-elevation) should be annually treated with the recommended insecticides as a prophylactic measure in order to facilitate good frame development: Refer to the Advisory Circular PU 4 for recommended chemicals, dosages, method of application and pre-harvesting intervals. Spraying is recommended in May/June in the north-east sector and in December/January in the south west sector. A repeat application is necessary after 6 to 8 weeks in the field where the SHB attack already been noticed.
+
+# 2.6.2 Mature Tea
+
+Only application of Lime-Sulphur is recommended to protect mature tea fields from SHB attacks. Refer to the Advisory Circular PU 4.
+
+|Time of spraying Lime-Sulphur for mature tea fields|Pruned year|Spraying after pruning (Year 1)|Spraying after pruning (Year 2)|Spraying after pruning (Year 3)|
+|---|---|---|---|---|
+|South-west|Pruning|Spraying|Spraying|Spraying|
+|South-west|Pruning|Spraying| | |
+|North-east|Pruning|Spraying|Spraying| |
+|North-east|Pruning|Spraying| | |
+
+Tea Research Institute of Sri Lanka
+
+Talawakelle
+
+COPYRIGHT
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, including photocopying, recording, scanning or information storage and retrieval electronic or mechanical, system without the prior written permission from the Director; Tea Research Institute of Sri Lanka, Talawakelle.

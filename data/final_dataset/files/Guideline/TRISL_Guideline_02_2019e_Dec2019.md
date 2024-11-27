@@ -1,0 +1,55 @@
+# TEA RESEARCH INSTITUTE OF SRI LANKA
+
+Issued in: December 2019
+
+Guideline No: 02/2019
+
+# GUIDELINES FOR USE OF MOTORIZED TEA PRUNING MACHINES
+
+# Introduction
+
+With continuous harvesting of shoots over several years, the tea bush rises beyond the comfortable reach of pluckers’ hand and it also tends to produce fewer shoots, more dormant shoots (banjies) and more flower buds. Furthermore, a close canopy may accumulate debilitated branches and dead woods. Therefore, it becomes necessary to prune tea bushes at regular intervals for reducing the height, stimulating vegetative growth and maintaining the health of tea bush. The ultimate objective of pruning is the effective utilization of the land area under tea. Depending on the bush health (vigour), environmental conditions (elevation) and type of tea (seedling or VP), the pruning cycle varies from around 2 - 5 years.
+
+Tea bushes are best pruned manually as it paves the way for individual removal of branches. However, it requires a large number of skilled workers (40-50 workers/ha). Furthermore, pruning needs to be completed within a certain period of the year i.e. within a few months of the rainy season avoiding dry weather. With the scarcity of workers, there is a great tendency in the tea plantations to use motorized machines for pruning tea.
+
+# Tea pruning machines
+
+Tea pruning machines are usually brush (bush) cutters carried on shoulders. They often have a 2 stroke engine and 1-1.3 m long guide tube with a drive shaft to which a pruning blade is mounted (see Figure 1). The blade rotates anti-clock-wise. A wide handle fixed to the drive tube has engine controls such as the throttle. The weight of the machine is generally 6-8 kg. The output of the pruning machines varies from 150-250 bushes per hour depending on the size of the bush frame, conditions of the field and operator’s skill. The fuel consumption of pruning machines is about 0.75-1 liter per hour.
+
+Figure 1. Proper use of tea pruning machine
+
+Figure 2. Correct area (shaded) of the blade to be used for cutting
+
+Page 1 of 3
+# Proper use of pruning machines in the field
+
+- Workers should be properly trained for operating and day-to-day maintenance of the machine and educated on safety aspects periodically as per manufacturer's instructions.
+- The required quantity of gasoline (petrol) and 2T oil mixture should be prepared daily for the two-stroke engine as per manufacturer’s recommendations. A freshly prepared and well-mixed (shacked) fuel mixture should be used for filling the fuel tank.
+- Operators should use safety gears such as jungle boots and goggles.
+- Pruning machines should not be used for formative pruning (first proper pruning) of tea bushes as such tea bushes do not have well-developed frame and root system.
+- It is essential to rest (withhold harvesting) tea fields for a minimum period of 6 weeks prior to pruning.
+- Over grown weed cover in tea fields reduces the output of pruning machines and hence, should adequately be cleaned before pruning.
+- As the blade rotates anti-clock-wise, it should be fixed to the gear head correctly so that the cutting edges of the blade face towards the rotating direction (see Figure 2 & operator’s manual/instructions for details).
+- The smoothness of the cut depends on the number of tips, sharpness and speed (rpm) of the blade. Therefore, blades with tungsten carbide tips (around 100) are ideal for tea pruning. Engine should be throttled adequately before the cut is made.
+- The cut should be preferably made by using one-third of the blade (circumference) from the front to the left (see Figure 2). Blade with broken or blunt tips should not be used for pruning.
+- Few branches nearest to the operator should be cut first at the recommended height and the balance should be removed progressively (step wise) at the same height by swinging the pruner (from the right to left) while moving forward.
+- Branches should be cut by exerting a mild pressure to the blade. The blade should never be dashed towards the frame of the tea bush as it damages the blade and the branches.
+- It is dangerous to try and remove branches/twigs or other matter entangled with the blade if any, while the engine is running.
+- One or two healthy and peripheral branches having 200-300 leaves on the left-side of the bush should be left as lungs.
+- Branches should be removed so that the top surface of the bush frame follows the slope of the land.
+- Manual cleaning of the frames by removing knots, damaged, dead, diseased and pest attacked branches is essential after the machine pruning to preserve the bush health.
+- The remnant fuel if any should be removed from the tank and those in the carburetor should also be burnt by running the engine for few minutes until it automatically stops at the end of the day.
+# Maintenance Instructions
+
+- Blade and the engine including air cleaner filters need to be cleaned before storing the machine.
+- It is preferable to apply some oil on the blade to prevent rusting when storing the machine for longer periods without use.
+
+# Tea Research Institute of Sri Lanka
+
+# Talawakelle
+
+Copyright
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, scanning or information storage and retrieval system without the prior written permission from the Director, Tea Research Institute of Sri Lanka, Talawakelle
+
+Page 3 of 3
