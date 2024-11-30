@@ -41,6 +41,5 @@ The Tea Research Institute of Sri Lanka
 
 Talawakelle
 
-Copyright © The Tea Research Institute of Sri Lanka 2003
 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means; electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director, The Tea Research Institute of Sri Lanka.

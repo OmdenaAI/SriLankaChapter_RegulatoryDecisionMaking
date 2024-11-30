@@ -79,7 +79,6 @@ Categorization is a dynamic system as it depends on the development of fields re
 The Tea Research Institute of Sri Lanka
 
 Talawakelle
-Copyright ~ The Tea Research Institute of Sri Lanka 2003
 
 # COPY RIGHT
 

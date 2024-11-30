@@ -149,5 +149,4 @@ Introduce proper record keeping approach for routine monitoring of cost componen
 Tea Research Institute of Sri Lanka
 Talawakelle
 
-COPYRIGHT
 All rights reserved. No parts of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director, Tea Research Institute of Sri Lanka.

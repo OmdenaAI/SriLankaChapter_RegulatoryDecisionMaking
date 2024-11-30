@@ -205,7 +205,6 @@ Please refer TRI PM and DM series of Advisory Circulars for current recommendati
 
 With proper timing of operations along with good management practices, nursery tea plants with appropriate quality standards can be produced within a period of 10 - 12 months in Up country and Uva regions, and 8 - 9 months in Low country regions.
 
-COPYRIGHT
 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director; Tea Research Institute of Sri Lanka.
 

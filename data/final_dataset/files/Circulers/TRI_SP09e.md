@@ -61,6 +61,5 @@ The samples should be sent directly to the Head; Soils and Plant Nutrition Divis
 
 It is necessary that the total cost of analysis should be paid prior to commencing analysis. Payments could be made through cheques, postal or money orders drawn in favour of "Tea Research Institute of Sri Lanka" and forwarded to the Head, Soils and Plant Nutrition Division, Tea Research Institute of Sri Lanka, Talawakelle or to the regional laboratories located at Hantana, Kandy and Walahanduwa, Galle. Money could also be paid at the cash counter of the Tea Research Institute or its centres at the time of submission of samples for analysis:
 
-# COPYRIGHT
-
+# 
 All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording or information storage and retrieval, without permission in writing from the Director; Tea Research Institute of Sri Lanka.
