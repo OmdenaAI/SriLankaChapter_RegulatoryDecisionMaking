@@ -1,6 +1,0 @@
-pandas
-groq
-tqdm
-llama_parse
-llama_index
-python-dotenv
