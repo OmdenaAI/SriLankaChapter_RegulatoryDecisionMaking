@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+from json.decoder import JSONDecodeError
 import os
 import re
 

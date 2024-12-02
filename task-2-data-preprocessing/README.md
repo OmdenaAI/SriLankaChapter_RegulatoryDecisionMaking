@@ -40,5 +40,7 @@ python main.py <input_csv_path> <output_csv_path>
 ```
 
 
-
+### arguments
+- **input_csv_path** : path to a csv containing at least the paths to the file to process and the nature of the document (txt or pdf) <br>
+- **output_csv_path** : path where to save the result ,a processed csv with the extracted content and metadatasa path
 
