@@ -167,7 +167,7 @@ def remove_duplicates(df):
         raise
 
 
-def clean_pdf_names(df):
+def clean_image_names(df):
     """
     Clean the image names by removing page numbers and other text.
 
