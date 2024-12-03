@@ -198,6 +198,24 @@ def mark_non_english_pdfnames(row):
         return 'sin'
     return None
 
+def clean_text_from_copyright(text):
+    """
+    Clean and preprocess the extracted text content to make it suitable for metadata extraction.
+    This will remove unwanted text such as 'Copyright' and any excessive spaces or line breaks.
+    """
+    if not isinstance(text, str):
+        return None
+
+    # Remove specific unwanted text like 'Copyright' (case-insensitive) and everything after it
+    text = re.sub(r'copyright[\s\S]*?(\n|\r|\Z)', '', text, flags=re.IGNORECASE)  # Remove copyright section and text after it
+
+    return text
+
+def sanitize_title(title):
+    # Remove the substring "(lawnet)" from the title
+    sanitized_title = title.replace("(lawnet)", "")
+    return sanitized_title
+
 
 
 def save_text_to_file(file_path, text):

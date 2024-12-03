@@ -7,28 +7,30 @@ from playwright.async_api import async_playwright
 import aiohttp
 from urllib.robotparser import RobotFileParser
 from urllib.parse import urlparse
+import os
+import sys
+import logging
+import csv
+import asyncio
+from datetime import datetime
+from google.colab import drive
+import pandas as pd
+import json
+import os
+import logging
+import src.data_source_tri.tri_scraper
+import src.data_source_tbal.tbal_scraper
+import src.data_source_egz.egz_scraper
 
+
+# Set up logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 # Set up logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
-
-
-# Utility function to sanitize file names
-def sanitize_filename(filename):
-    return re.sub(r'[\\/*?:"<>|]', "_", filename)
-
-# Extract date from the URL (YYYY/MM format)
-def extract_date_from_url(url):
-    match = re.search(r'/(\d{4})/(\d{2})/', url)
-    if match:
-        year = match.group(1)
-        month = match.group(2)
-        return f"{year}-{month}"
-    return None
-
 
 # Function to create a publication entry
 def create_publication_entry(document_class, file_type, filename, file_path, file_link, title, date_of_issuance, reference_number):
@@ -50,6 +52,20 @@ def create_subfolder(destination_folder, document_class):
     subfolder_path = os.path.join(destination_folder, subfolder)
     os.makedirs(subfolder_path, exist_ok=True)
     return subfolder_path
+
+# Utility function to sanitize file names
+def sanitize_filename(filename):
+    return re.sub(r'[\\/*?:"<>|]', "_", filename)
+
+# Extract date from the URL (YYYY/MM format)
+def extract_date_from_url(url):
+    match = re.search(r'/(\d{4})/(\d{2})/', url)
+    if match:
+        year = match.group(1)
+        month = match.group(2)
+        return f"{year}-{month}"
+    return None
+
 
 # Function to download PDF from URL and save it to the destination folder
 async def download_pdf(file_link, file_path, file_name):
@@ -116,3 +132,10 @@ async def scrape_website(scraping_function, page_url, destination_data_folder, d
     except Exception as e:
         logger.error(f"Error scraping website: {e}")
         raise
+
+
+if __name__ == "__main__":
+    # # Run all scrapers and CSV generation
+    # asyncio.run(main())
+
+ 
