@@ -26,7 +26,7 @@ This dataset contains a collection of legal and regulatory documents, which incl
 | `data_origin`           | Describes the source of the document: `'original_dataset'` or `'scraped'`.                                      |
 | `retrieved_date_of_issuance` | The date the document was issued, extracted during scraping.                                                  |
 | `issuing_authority`     | The department or organization that issued the document, e.g., "TRI Circulers".                                 |
-| `retrieved_topic`       | The topic or subject of the document, either inferred or extracted during scraping.                             |
+| `retrieved_title`       | The topic or subject of the document, either inferred or extracted during scraping.                             |
 | `text_content`          | The raw text content extracted from the document. This is often messy and requires further parsing.             |
 | `PDF_or_text`           | Specifies whether the document is a PDF (`'pdf'`) or direct text (`'text'`).                                    |
 | `markdown_content`| The cleaned content with layout information, extracted via `llamaparse`. This content is suitable for markdown formatting. |
