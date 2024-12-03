@@ -29,7 +29,7 @@ This dataset contains a collection of legal and regulatory documents, which incl
 | `retrieved_topic`       | The topic or subject of the document, either inferred or extracted during scraping.                             |
 | `text_content`          | The raw text content extracted from the document. This is often messy and requires further parsing.             |
 | `PDF_or_text`           | Specifies whether the document is a PDF (`'pdf'`) or direct text (`'text'`).                                    |
-| `llama_markdown_content`| The cleaned content with layout information, extracted via `llamaparse`. This content is suitable for markdown formatting. |
+| `markdown_content`| The cleaned content with layout information, extracted via `llamaparse`. This content is suitable for markdown formatting. |
 | `llama_title`           | The main title of the document, extracted via `llamaparse`.                                                    |
 | `llama_issue_date`      | The issue date of the document, extracted via `llamaparse`.                                                     |
 | `llama_reference_number`| The reference or serial number of the document, extracted via `llamaparse`.                                    |
@@ -39,7 +39,7 @@ This dataset contains a collection of legal and regulatory documents, which incl
 ### Text Content (`text_content`)
 - Raw text content extracted directly from documents, typically unclean and unformatted. This column is used for understanding and requires advanced parsing for correct structure and table extraction.
 
-### Cleaned Markdown Content (`llama_markdown_content`)
+### Cleaned Markdown Content (`markdown_content`)
 - Cleaned content that includes layout information extracted using `llamaparse`. This is the preferred format for viewing the documents as it retains their structure. You can use [Markdown Live Preview](https://markdownlivepreview.com/) to view the formatted content.
 
   
