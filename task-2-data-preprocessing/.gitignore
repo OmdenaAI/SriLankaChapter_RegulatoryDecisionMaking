@@ -8,3 +8,4 @@ preprocessing_pipeline
 .venv
 src/__pycache__
 processed.csv
+.env
