@@ -1,10 +1,6 @@
-import pandas as pd
-import json
-from json.decoder import JSONDecodeError
-import os
 import re
 from datetime import datetime
-from textblob import TextBlob
+
 
 
 def clean_text_for_metadata_extraction(text):
