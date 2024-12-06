@@ -11,7 +11,7 @@ from src.cleaning_utils import (merge_markdown_content,
                    normalize_markdown,
                    process_row)
 
-from src.metadata_extraction import extract_metadata
+from src.metadata_extraction import extract_metadata , clean_date
 
 from src.parser_functions import (process_and_save_df , 
                               documents_to_dataframe,
@@ -34,7 +34,7 @@ def log_errors(func):
 @log_errors
 def read_csv(df_path):
     logging.info("Reading the CSV")
-    df = pd.read_csv(df_path).head(1)
+    df = pd.read_csv(df_path)
     df.fillna("", inplace=True)
     logging.info("Reading complete")
     return df
@@ -43,7 +43,7 @@ def read_csv(df_path):
 @log_errors
 def process_documents(df):
     logging.info("Beginning of the parsing")
-    processed_documents = asyncio.run(process_and_save_df(df))
+    processed_documents = asyncio.run(process_and_save_df(df,reformat_path=False))
     processed_df = documents_to_dataframe(processed_documents)
     logging.info("Parsing complete")
     return processed_df
@@ -69,6 +69,7 @@ def extract_and_merge_metadata(processed_df, client):
     merged_df = merged_df.join(merged_df['parsed_metadata'].apply(pd.Series))
 
     merged_df = merged_df.drop(columns=['metadata_returned','parsed_metadata'])
+    merged_df['parsed_issue_date'] = merged_df['parsed_issue_date'].apply(clean_date)
 
     # Cleaning the dataset
     merged_df = merged_df.rename(columns={
