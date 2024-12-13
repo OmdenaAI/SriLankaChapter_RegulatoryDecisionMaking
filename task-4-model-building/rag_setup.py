@@ -1,4 +1,3 @@
-import os
 import logging
 import pandas as pd
 from typing import List
@@ -174,11 +173,65 @@ def setup_vector_store(documents: List[Document], session: kdbai.Session, db_nam
             documents,
             storage_context=storage_context
         )
+        
         logging.info(f"Vector store setup complete. Indexed {len(documents)} documents.")
+        return llm, index
 
     except Exception as e:
         logging.error(f"Error setting up vector store: {e}")
         raise
+
+def setup_query_engine(index: VectorStoreIndex, llm: Groq):
+    """
+    Set up the query engine using KDBAI Vector Index and Groq LLM.
+    """
+    try:
+      # Set topk value
+      K = 15
+
+      query_engine = index.as_query_engine(
+          similarity_top_k=K,
+          llm=llm,
+          vector_store_kwargs={
+              "index": "flat_index"
+          },
+      )
+
+      logging.info(f"Query index setup complete.")
+      return query_engine
+
+    except Exception as e:
+      logging.error(f"Error setting up query engine: {e}")
+      raise
+
+def interactive_chat(query_engine: VectorStoreIndex, llm: Groq):
+    """
+    Provide a user interface for interacting with the RAG system.
+
+    Args:
+        query_engine (VectorStoreIndex): The query engine to use for responses.
+        llm (Groq): The LLM to generate responses.
+    """
+    logging.info("Starting interactive chatbot. Type 'exit' to quit.")
+
+    Settings.llm = llm
+    chat_history = ""
+    while True:
+        user_input = input("You: ")
+        chat_history += f"\n\nUser: {user_input}"
+        if user_input.lower() in ["exit", "quit"]:
+            logging.info("Exiting chatbot.")
+            break
+
+        try:
+            retrieval_result = query_engine.query(chat_history+"\n\nBot: ")
+            response = retrieval_result.response
+            print(f"Bot: {response}")
+            chat_history += f"\n\nBot: {response}"
+        except Exception as e:
+            logging.error(f"Error during query execution: {e}")
+            print("Bot: Sorry, something went wrong. Please try again.")
+
 
 if __name__ == "__main__":
     # Define paths and parameters
@@ -196,12 +249,22 @@ if __name__ == "__main__":
         # Load documents
         docs = load_data(CSV_PATH, TEXT_COL, METADATA_COLS, DOC_METADATA_KEYS, only_tri_circulars=True)
 
-        # # Set up KDBAI session
+        # Set up KDBAI session
         kdbai_session = setup_kdbai_session()
 
-        # # Set up vector store
-        setup_vector_store(docs, kdbai_session, DB_NAME, TABLE_NAME, EMBEDDING_MODEL_NAME)
+        # Set up vector store
+        llm, index = setup_vector_store(docs, kdbai_session, DB_NAME, TABLE_NAME, EMBEDDING_MODEL_NAME)
+
+        # Set up query engine
+        query_engine = setup_query_engine(index, llm)
+
+        # Begin querying chatbot
+        try:
+          interactive_chat(query_engine, llm)
+        except Exception as e:
+          logging.info(f"Error during querying chatbot: {e}")
+
 
         logging.info(f"RAG setup process completed successfully. Processed {len(docs)} documents and stored in database '{DB_NAME}' with table '{TABLE_NAME}'.")
     except Exception as e:
-        logging.error(f"Failed to complete RAG setup: {e}")
+        logging.info(f"Failed to complete RAG setup: {e}")
