@@ -2,6 +2,7 @@ import logging
 import pandas as pd
 from typing import List
 from llama_index.core import Document, StorageContext, Settings
+from llama_index.core.node_parser import MarkdownNodeParser
 from llama_index.vector_stores.kdbai import KDBAIVectorStore
 from llama_index.core.indices import VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
@@ -171,7 +172,8 @@ def setup_vector_store(documents: List[Document], session: kdbai.Session, db_nam
         storage_context = StorageContext.from_defaults(vector_store=vector_store)
         index = VectorStoreIndex.from_documents(
             documents,
-            storage_context=storage_context
+            storage_context=storage_context,
+            transformations=[MarkdownNodeParser()]
         )
         
         logging.info(f"Vector store setup complete. Indexed {len(documents)} documents.")
