@@ -1,0 +1,82 @@
+# ADVISORY CIRCULAR No.DM 2
+
+Issued in: February 2024
+
+Serial No. 05/24
+
+# PROTECTION OF TEA FROM ROOT DISEASES
+
+This Advisory Circular supersedes the Advisory Circular DM 2 Serial No 2/02 issued in October 2002 and related previous Advisory Circulars and links with Advisory Circular PU 2.
+
+# 1. Introduction
+
+Tea bushes are infected by different types of pathogens resulting in root diseases. Red root disease, Black root disease, Brown root disease, Charcoal root disease, White root disease and Violet root disease are the common root diseases damaging tea plants.
+
+# 2. Symptoms and Diagnosis
+
+The above ground symptoms of root diseases are alike. They are always symptoms of water shortage, but they occur at times when the soil is not deficient of water. Their identification therefore depends largely upon recognition of the fungi associated with the plants and their invaded roots.
+
+# 2.1 Red Root Disease
+
+Red root disease, commonly known as 'Poria root disease' of tea, is caused by a fungus (Poria hypolateritia Berk). This occurs most frequently in tea growing areas over 600 m (2000 ft) in elevation. The disease can appear on solitary bushes or in patches. It usually spreads by means of mycelial strands (fungal threads), which is able to grow through the soil. Therefore, root contact is not essential for the spread of infection.
+
+Proper diagnosis of the disease in the field is of fundamental importance in its control. The first symptoms are yellowing of the foliage, followed by wilting and the sudden death of a part or the entire bush with the withered leaves remaining attached for several days.
+
+The affected bush must be uprooted with the roots. If the infection is fresh and active the fungal mycelium could be seen as whitish specs on a reddish background, particularly towards the base of the bush. If the infection has been there for some time, these symptoms can be seen only after scraping the root-surface-soil-layers with a knife. The mycelium is initially white, soft and fluffy but turns into smooth thin, flat, dark red cords or sheets, with age. These dark cords are normally inconspicuous. However, when such roots with old infections are soaked in water, the red cords of the mycelium can be recognized. When the disease is at an advanced stage the roots become soft and pulpy, making it difficult to extract from the soil.
+
+# 2.2 Black Root Disease
+
+The disease is caused by Rosellinia arcuata and R bunoides. Rosellinia arcuata fungus forms irregular, black, cobwebby cords of mycelium on the root surface. Woolly grey to black mycelium can also be found on the main stem a few inches above the soil surface. Numerous small, white, star-shaped mycelium develop on the surface of the wood, under the bark. Small black points or narrow black strands can be seen on the surface of and embedded in wood infected with R bunoides.
+
+# 2.3 Brown Root Disease
+
+The disease is caused by the fungus Phellinus noxius. Its most prominent character is the crust of soil firmly attached to the roots and which cannot easily be knocked or washed off. The presence of a
+# 2.4 Charcoal Root disease
+
+The disease is caused by *Ustulina zonata and U. deusta*. Roots attacked by this fungus have no visible mycelium on their surface. However, when the bark is removed, large white or brownish white fan-shaped patches of mycelium are seen on the wood surface. Wood is permeated by irregular generally double black bands or lines. The fungus produces a characteristic charcoal-like, black, brittle fructification at the collars or main stems of diseased bushes.
+
+# 2.5 White Root Disease
+
+The pathogen is *Rigidoporus microporus*. Roots are covered with stout, rather flat cords of mycelium which run more or less longitudinally and unite with one another to form a network. The mycelium is white-yellowish when fresh and has a reddish tinge. Fructifications are formed on the base - like brackets, semicircular in shape and reddish brown in colour. The disease is common in low county.
+
+# 2.6 Violet Root Disease
+
+This is a secondary root disease and is associated with poor soil aeration and water logging conditions. The disease is caused by *Nectria mauriticola*. Roots become roughened due to enlargement of lenticels. Roots appear either inky black or light violet in colour. Under the bark, purplish black flattened mycelial strands (rhizomorphs) with characteristic veinations are found.
+
+# 3. Disease Management
+
+# 3.1 Cleaning of Infestation
+
+# 3.1.1 Small Infected Patches
+
+If only one or a few plants are infected, remove the dead or dying bushes and any adjoining ones that are showing any yellowing of the foliage. Any stumps or trees found within the infested patch must be uprooted. The patch should be deep-forked (30-45 cm) and all pencil thickness should be collected into a pile. All the bushes and any woody material uprooted in the cleaning process must be burnt on the spot if the space is adequate. This is to prevent any possible dissemination of infected material into uninfected areas. Only when that is not possible, the closest possible alternative spot must be chosen for burning them.
+
+# 3.1.2 Large/Several-infected Patches
+
+A large area may be infected by the disease as one contiguous block or as several small patches of several bushes adjacent to each other. The method of cleaning is essentially similar to that described for cleaning of small patches. If the infected area is staggered and includes several small pockets close to each other, it would be advisable to demarcate the entire area to include all of them into one block. Remove all the bushes and stumps within the demarcated area, with their roots. The patch should be deeply forked (45-60 cm) and all the remaining roots up to pencil-thickness be collected and burnt in situ.
+
+If there are many large patches, do not attempt to clean all of them at once. List the bad sections and treat them first to prevent fast spread and contamination. The entire cleaning and burning operation needs very close supervision.
+# 3.2 Treatment of Peripheral Bushes
+
+After the infected area has been thoroughly cleaned, the two rows of bushes surrounding the patch should be treated with a soil drench directed at the area around the collar of bushes using a suitable fungicide (Refer Advisory Circular PU2). Fungicide should be applied when the soil is suitably moist. Repeated applications at 2-3 month intervals up to 3-4 times must be undertaken depending on the performance of peripheral bushes. Care should be taken to avoid surface run off at the time of drenching treatment. It would be advantageous to loosen the soil around the plants with hand fork before treatment with a recommended fungicide.
+
+If for some reason, any of the peripheral bushes develop symptoms of the disease they should be uprooted immediately, taking all the precautions mentioned above and the adjoining bushes be treated with a fungicide as before. This process of observation and uprooting should continue until no more symptoms appear and the disease is not spreading any more.
+
+# 3.3 Planting of Grass
+
+When the cleaning up operation is over; the patch should be planted with Mana grass for a minimum period of two years before planting tea.
+
+# 3.4 Treatment of Infills
+
+At the end of rehabilitation period, the patch could be planted with tea immediately followed by drenching treatment. The rate of application in the first two rounds (at 2-3 month intervals) can be at the rate of 250 ml per plant which should be increased up to 300-350 ml per plant in the subsequent two rounds. Please refer Advisory Circular PU2 for recommended fungicides. Cleaning of diseased patches should be started two years prior to pruning; so that the vacancies can be infilled in the pruning year.
+
+# 3.5 Treatment of Areas to be Replanted
+
+Should be properly identified. Dying bushes in areas earmarked for uprooting for replanting with tea. The cause of death or any areas suspected and or confirmed to be affected by a root disease must be demarcated and cleaned first taking all the precautions mentioned for containing the disease. It is best that these areas are marked out for future identification so that the necessary follow up treatments (as indicated before) can be properly undertaken after planting of tea.
+
+Tea Research Institute of Sri Lanka
+
+Talawakelle
+
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means; electronic or mechanical, including photocopying, recording, scanning or information storage and retrieval system without the prior written permission from the Director; Tea Research Institute of Sri Lanka, Talawakelle.

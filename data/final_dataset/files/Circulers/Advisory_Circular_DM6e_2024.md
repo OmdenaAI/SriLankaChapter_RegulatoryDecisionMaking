@@ -1,0 +1,69 @@
+# ADVISORY CIRCULAR No.DM 6
+
+Issued in: February 2024
+
+Serial No. 09/24
+
+# PROTECTION OF TEA FROM COLLAR AND BRANCH CANKER DISEASE
+
+(This Advisory Circular supersedes the Advisory Circular DM 6 Serial No 21/03 issued in September 2003 and related previous Advisory Circulars and links with Advisory Circular PU 2)
+
+# 1. Introduction
+
+The fungus Phomopsis theae attacks tea plants in immature new clearings (up to 8 years) and the tender shoots of mature seedling teas and tea cultivars, in areas over 1200 m (4000 ft) in elevation. In all cases, infection takes place during dry weather conditions. Collar canker and bush dieback caused by Fusarium solani species complex infects both young and mature bushes regardless of elevation.
+
+# 2. Symptoms and Diagnosis
+
+Those bushes that are infected at the collar start to show general yellowing of the entire foliage: These symptoms become heightened with the onset of rains when they fail to recover; compared to an adjacent healthy bush. Upon uprooting, such plants will show near complete or complete girdling at the collar, depending on the intensity of yellowing: This could give the impression that the disease starts with the rains.
+
+Infection takes place through leaf scars, wounds or directly by penetration of the bark in plants; which have a shallow rooting habit; or in plants growing in unsuitable soils. Similarly, poorly developed nursery plants having weak root systems are also prone to attack. Infections over a large area is uncommon unless the area has poor, gravelly or clayey soil with underlying slab rock or unless very susceptible tea cultivars are used. Infections are usually sporadic and occasional, and patchy infections are a rarity: thinning of branches. Flowering and fruiting are common on infected bushes. Irregular canker is found at the collar region. Cankers caused by F. solani species complex cause premature leaf yellowing and leaf fall followed by older cankers having raised margin. Crakes and peeling off of the bark appear at the collar region at soil level or just below: The exposed cambium and wood were discolored giving a tan, brown or black color: Bushes die gradually.
+
+# 3. Control of Collar and Branch Cankers
+
+An integrated system of control has been found to be the most suitable. These will have to be invariably combined with measures to conserve soil moisture during dry weather periods. The following measures are recommended to raise plants, which can withstand infection:
+
+# 3.1 Cultural Methods
+
+# (a) Nursery Practices
+
+It is necessary to raise healthy and uniformly grown plants in the nursery: To achieve this, the following measures are recommended.
+
+- Discourage use of cultivars KEN 16/3, K 145, TRI 2024, TRI 2142, TRI 3020, TRI 4067, TRI 3073, TRI 3072 for the drier areas where Phomopsis canker is a problem.
+- Strictly adhere to standard planting materials.
+
+Note: Cultivar response is not prominent in collar canker and dieback caused by F. solani.
+# (b) Field Practices
+
+# Land Selection
+
+Avoid planting in unsuitable lands in steep and rocky areas, in areas with underlying slab rock, ravines and in areas with poor drainage.
+
+# During Rehabilitation
+
+Examine the grass during the drought and mark out the areas where the grass is not growing satisfactorily, particularly in patches. Determine whether such poor growth is due to underlying slab rock or poor soil by digging a pit. Having determined the cause of the poor growth of grass, either ameliorate it or diversify into grass.
+
+# During Field Planting
+
+It is important to prepare correct-size planting holes and follow up by correct planting, to encourage a well distributed root system:
+
+- Thatch the clearing with loppings of Mana, Guatemala or Eragrostis curvula.
+- Avoid deep planting and accumulation of soil at base after planting.
+
+# Post-planting Operations
+
+Apply fertilizer correctly, as recommended (see Advisory Circular SP 2). Protect the plants against blister blight until maturity: Entry of Phomopsis can take place through wounds caused by stem infections due to blister blight. If any cankers are noticed, remove the branch just below the canker as soon as they are noticed. Thatch all new clearings adequately.
+
+# 3.2 Chemical Methods
+
+As infection is always sporadic, prophylactic treatment of all plants in a clearing is not advocated to prevent possible infection on a small number of plants. However; it has been observed that the fields, which receive adequate controlling in blister blight; by way of fungicides, particularly the systemic ones, to record less incidence of collar canker.
+
+Intervals based on severity (2-4 application is required, see refer Advisory Circular PU2): Drench the canker infected bushes with a recommended systemic fungicide at 0.05% at 2-4 weeks.
+
+Plants showing general yellowing of the foliage and dieback to be uprooted and burnt in situ.
+
+Tea Research Institute of Sri Lanka
+
+Talawakelle
+
+
+All rights reserved: No part of this publication may be reproduced or transmitted in any form or by any means, including photocopying, recording, scanning or information storage and retrieval system without the prior written permission from the Director; Tea Research Institute of Sri Lanka, Talawakelle.

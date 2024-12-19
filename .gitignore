@@ -1,0 +1,4 @@
+.env
+preprocessing_pipeline
+.venv
+___pycache__

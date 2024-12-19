@@ -1,0 +1,80 @@
+# ADVISORY CIRCULAR NoPM 3
+
+Issued in: February 2024
+
+Serial No. 13/24
+
+# MANAGEMENT OF LOW COUNTRY LIVE WOOD TERMITE
+
+This Advisory Circular supersedes the Advisory Circular PM 3 Serial No. 6/03 issued in June 2003 and previous related Advisory Circulars and links with Advisory Circular PU 2.
+
+# 1. Introduction
+
+Live-wood termites of tea emerged as economically important key pests in the Low-country in the 1960s following a rapid increase in areas under vegetatively propagated tea. It was coincidental that the highest yielders of those clones that were used to replant old seedling tea areas also turned out to be the most susceptible host plants for the two most prevalent species of live-wood termites in the low-country.
+
+On account of their high yield potential, cultivars TRI 2023 and TRI 2026 became very popular and were therefore the most widely planted. They were also the cultivars most susceptible to this group of pests, and as a result, the impact of termite damage on tea in the low country was immediately felt. The significance of live-wood termites as a group of primary, and very injurious, pests became apparent within a matter of a few years of large-scale planting of these two cultivars.
+
+# 2. Live-wood Termite Species Attacking Low Grown Tea
+
+The most prevalent species of live-wood termites attacking tea in the low country are Glyptotermes dilatatus and Neotermes greeni. The former is commonly referred to as the "Low-country Live-wood Termite" (LCLWT) and is the most widely distributed of the two species. It attacks tea from sea level to an elevation of about 1,000 m a.m.sl. N. greeni is usually encountered in the upper elevations of the low country and also occasionally in the mid-country.
+
+# 3. Behavioural Pattern
+
+Biology, habits, preference for host plants, and dispersal are fairly similar for the species of low-country live-wood termites, and are described below:
+
+# 3.1. Dispersal
+
+Alates (winged reproductives) are the ones responsible for dispersal and the onset of monsoons in rainy seasons attend to dispersal flight and alight on suitable host plants. They pair off, shed their wings, and make their way into the bush through a "soft spot" on the stem. These "soft spots" originate as wounds on pruning cuts, mechanical damages, SHB and canker damages which have been acted upon by wood-rotting organisms to form dead wood. They facilitate easy and fast entry of the termite pair, and the greatest incidence of termite damage is seen to occur in fields that have been pruned 3-4 times without the adoption of sanitary measures.
+
+# 3.2. Colony Formation
+
+Once inside the stem, the parent pair gradually excavates a short gallery and the female deposits the eggs, and the brood that develops from these eggs forms the initial colony. The first set of larvae, nursed by the parent pair, develop into nymphs which then take over the function of gallery-making and caring for all other inmates of the colony.
+The Nymphs which function as workers are an immature stage that can either develop further into mature casts like soldiers and reproductive stages or remain as they are with arrested development; according to the requirement of the colony: Therefore, they are referred to as false workers or pseudogates.
+
+The nymphs developing into reproductive adults get transformed into two types. In one, the adult is devoid of wings but reproductively it is active and more sclerotized than others: They perform the function of egg laying and building up of the colony: These non-winged reproductives are referred to as "supplementary reproductives" as they, in effect supplement the function of the parent pair. The other type, which is also reproductively mature, develops wings but does not mate or lay any eggs in the parent colony: These are referred to as "primary reproductives" or alates and are responsible for the dispersal and founding of new colonies elsewhere. Their dispersal is associated with increased atmospheric humidity, especially during the pre-monsoon period, but swarming populations have, however; been encountered in the air throughout the year: This results in the susceptible host being prone to infestation at any time of the year:
+
+# 3.3 Type of Damage:
+
+Until the main trunk is fully colonized and the second generation alates start to emerge in dispersal, the host plant does not exhibit any external symptoms. It is only when the galleries traverse across the conducting tissues of the vascular ring that free movement of water and nutrients are interfered with, within the plant: At this stage symptoms of wilting or scorching of individual branches are seen, particularly during periods of water stress.
+
+Newly planted VP tea, even though it is a susceptible cultivar; is not generally infested until after the first proper prune: This is because prune cuts which later develop "soft spots" for the termite alates to enter through; are created only at the time of the first prune. However; termite alates can enter through the stem and branch cankers in the new clearings. Termite-susceptible cultivars are generally known to be prone to excessive die-back following pruning: Once inside the bush, the individuals are perfectly protected from external mortality factors as they seal off the gallery openings with their faecal matter. With time, the infestation progresses deep into the core of the bush whereby the bush becomes debilitated, and this results in direct yield loss from the field.
+
+# 4. Integrated Management of LCLWT
+
+Management of LCLWT requires a multi-pronged approach with the focus being centered on host-plant resistance. The important features of the integrated approach to manage LCLWT are given below:
+
+# 4.1. Planting of Tolerant Cultivars
+
+High-yielding cultivars with tolerance to this termite should be planted wherever possible. A use of mix of cultivars is also desirable. Planting the best suited cultivar for the region with Good Agricultural Practices (GAPs) is essential for sustaining the productivity of the plantation. Please refer to Advisory Circular PN 1 to select tolerant cultivars for LCLWT.
+
+Special attention should be given to the cultivars TRI 2023, TRI 2026, TRI 2043 and TRI 4042 avoiding "soft spots" originate as wounds on pruning cuts, mechanical damages, SHB and canker damages in termite-active areas.
+# 4.2. Adoption of Sanitary Measures at Pruning
+
+The implementation of sanitary pruning plays a major role in an integrated system of management. All galleried stems should be removed by pruning them progressively down until no residual colony is seen within the stems. Such action should be taken from the second prune onwards since it is difficult to destroy the termite colony once established in the main stem of the tea bush.
+
+# 4.3. Protection of Pruned Cuts from Wood rot fungi
+
+Protection of the pruned cuts with an anti-microbial wound dressing is recommended to avoid wood rot formation (please refer to Advisory Circular PU 2 for dosage and application method).
+
+# 4.4. Protection from Stem, Branch and Collar Cankers
+
+Refer to Advisory Circular DM 5 for the canker management.
+
+# 4.5. Special Considerations with Machine Pruning and Mechanized Field Activities
+
+As mechanized field operations for pruning and other agricultural practices tend to make damages and wounds in tea, special care should be taken during the operation and immediate treatment of wound dressings.
+
+# 4.6. Planting of Diversionary Hosts
+
+The common low-shade tree Gliricidia sepium serves as a diversionary host to the low country live-wood termite. At the usual planting density of G. sepium (final spacing of 6 m x 7.2 m), it may not have the necessary level of cushioning effect on tea, particularly when the tea cultivar is susceptible. However, planting G. sepium as much as possible in the tea as well as in the surrounding non-tea areas would help to reduce the number of colony founders attacking the tea. Rotted snags in trees should be available during the swarming period to attract alates and those should be removed and destroyed after the swarming period.
+
+# 4.7. Strengthening of Natural Predation by Establishing Perching Points in the Vicinity of Tea for Birds and Bats
+
+Natural predation on alates would contribute towards the natural control of this pest to a large extent. It is necessary that these predators (birds and bats) are provided with suitable conditions such as perching points in the vicinity of tea.
+
+Tea Research Institute of Sri Lanka
+
+Talawakelle
+
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, including photocopying, recording, scanning or information storage and retrieval electronic or mechanical; system without the prior written permission from the Director, Tea Research Institute of Sri Lanka, Talawakelle.

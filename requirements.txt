@@ -8,3 +8,5 @@ langchain==0.3.7
 transformers==4.46.2
 pillow==11.0.0
 pydantic==2.9.2
+pre-commit
+autopep8

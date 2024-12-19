@@ -1,0 +1,9 @@
+pandas
+llama-index
+transformers
+torch
+llama-index-llms-groq
+sentence-transformers
+llama-index-embeddings-huggingface
+kdbai-client
+llama-index-vector-stores-kdbai

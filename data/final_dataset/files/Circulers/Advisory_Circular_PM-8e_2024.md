@@ -1,0 +1,77 @@
+# ADVISORY CIRCULAR No.PM 8
+
+Issued in: February 2024
+
+Serial No. 18/24
+
+# MEASURES TO AVOID CONTAMINATION OF NURSERY PLANTS WITH NEMATODES THROUGH IRRIGATION WATER
+
+This Advisory Circular supersedes the Advisory Circular PM 8, Serial No. 07/03 issued in July 2003 and related previous Advisory Circulars.
+
+# 1. Introduction
+
+Tea nurseries at all altitudes are potentially be infested by different species of nematodes. Therefore, all good nursery practices should be strictly adapted as described in Advisory Circular PN 2 in order to produce healthy, vigorous and nematode free planting materials.
+
+There is a possibility to use water running through tea lands in nurseries. When such water is used for irrigation purposes, the nursery plants may get contaminated besides the nursery hygiene is maintained. Hence, all preventive measures should be implemented in different regions depending on existing facilities.
+
+# 2. Source of Contamination of Irrigation Water
+
+Water courses running through infested fields wash away soil contaminated with parasitic nematodes and their eggs. When water from such sources is collected, there is a high probability of this water becoming contaminated. When contaminated water is used to irrigate tea nurseries over a period of time, it could transmit adequate numbers of nematodes to the roots of young nursery plants. Such contaminated plants not only suffer themselves, but also disseminate the infestation into the new clearings when they are planted out. Continued watering may supply a very few nematodes in suspension; i.e. bring about significant infestation levels for young nursery plants: 2 to 3 per 5 1 which is sufficient to.
+
+# 3. Methods for Prevention of Contamination of Irrigation Water
+
+The following options are important in preventing water being contaminated with nematodes.
+
+# 3.1 Sedimentation of Run-off Ravine Water
+
+Nematodes besides their light weight get settled in water with time due to gravity. When nematodes are immersed in water for a long period, they get asphyxiated and killed. The dead as well as the moribund nematodes sediment at the bottom of the water should be periodically drained out.
+
+# 3.1.1 Construction of a Sedimentation System
+
+A series of water tanks inclusive of two sedimentation tanks (A & B) and storage tank(s) (C) to suit to the capacity in accordance with the daily irrigation requirements should be constructed in a way that one feeds the other following a sedimentation period (Figure). The storage tank(s) (C) should be of adequate capacity to collect sufficient quantity of water that is needed to irrigate the entire nursery any day.
+
+Plastic water tanks available in the market; and cement tanks are suitable for the purpose. Outlet of the plastic tanks should be modified to suit the requirement shown in the Figure 1.
+Two tanks of similar capacity should be built with the outlet pipe of the first tank fitted about one foot from the base and leading into the second tank. The inlet of the second tank should be a few centimeters from the top. The two tanks should be built at split level (Figure 1). The tanks can be located at different heights on sloppy land. Allow the water in the first tank to sediment for 24 hours and open the water into the second tank the following day. The water in the second tank should also be allowed to sediment for another 24 hours and released into the storage tanks. The bottom 30 cm layer of the water in any tank should not be used for irrigation. Instead, it should be drained out to a pit or drain which carries the sediment out of the nursery. The outlet pipe that feeds the next tank should be fitted in such a manner that this bottom layer of water is not tapped.
+
+It is also important that the sedimentation tank unit be regularly checked and monitored for proper functioning:
+
+|Tank 1|Volume X|
+|---|---|
+|Discard the 30 cm sediment|Allow water to settle for 24 hrs|
+|Tank 2|Volume X|
+|Discard the 30 cm sediment|Allow water to settle for 24 hrs|
+|Tank 3|Maximum Volume 3X|
+|Nematode free water for irrigation| |
+|Clean the tank periodically| |
+
+Sedimentation tanks (2) Storage tanks (1 or more)
+
+Figure 1: Schematic diagram of sedimentation tank unit
+
+# 3.2 Harness of a Well or a Spout
+
+In the absence of a natural spring in the vicinity of the nursery to supply water for irrigating the nursery, a special well dug out with raised walls to a height of 2 feet above the soil level, to prevent contamination during rainy weather:
+
+# 3.3 Mini Tank Construction
+
+The potential sources of such contamination are mainly from run-off water and ravine water. Therefore, these should be diverted away from tea lands through well-built drains. A stream may be blocked using a mini dam in such a way that water shall be retained as a reservoir. Such water shall be used for irrigation purposes after setting down for a minimum of two days.
+# 3.4 Water Treatment using Bleaching Powder
+
+Water stored in a tank, reservoir shall be directly treated with Bleaching powder to disinfect all organisms including germs, bacteria and fungi and parasitic nematodes.
+
+For water treatment purpose, commercial bleaching powder at the rate of                                kg per 1000         water basis should be used.
+
+Bleaching powder should be thoroughly mixed using a stick and the treated water should be left for minimum of 12 hours prior to use for irrigation. Water treatment with bleaching powder shall be done in the evening for purpose of irrigation on the following day:
+
+# 4. Important
+
+If the tea nursery is located in an estate with known nematode history, one should assume that the water courses running though fields could possibly be contaminated: This necessitates compulsory preventive measures described as above:
+
+Tea Research Institute of Sri Lanka
+
+Talawakelle
+
+
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, scanning or information storage and retrieval system without the prior written permission from the Director; Tea Research Institute of Sri Lanka, Talawakelle
+
+3
