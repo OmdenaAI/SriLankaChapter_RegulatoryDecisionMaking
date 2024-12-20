@@ -1,4 +1,5 @@
 import logging
+import logging
 import pandas as pd
 from typing import List
 from llama_index.core import Document, StorageContext, Settings
@@ -160,7 +161,7 @@ def setup_vector_store(documents: List[Document], session: kdbai.Session, db_nam
         # Initialize embeddings
         embedding_model = HuggingFaceEmbedding(
             model_name=embedding_model_name,
-            cache_folder="/"#rename this when deploying
+            cache_folder=os.getcwd()+'/models'
             )
 
         # Set up Groq API
@@ -255,7 +256,7 @@ if __name__ == "__main__":
     EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 
     # if you want to recreate the store, set recreate_store=True
-    recreate_store=False
+    recreate_store=True
 
     try:
         # Load documents

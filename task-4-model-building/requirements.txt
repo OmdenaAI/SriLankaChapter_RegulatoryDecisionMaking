@@ -7,3 +7,4 @@ sentence-transformers
 llama-index-embeddings-huggingface
 kdbai-client
 llama-index-vector-stores-kdbai
+python-dotenv

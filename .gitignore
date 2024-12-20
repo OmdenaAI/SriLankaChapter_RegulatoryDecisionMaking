@@ -2,3 +2,6 @@
 preprocessing_pipeline
 .venv
 ___pycache__
+*/___pycache__
+models
+.locks
