@@ -1,5 +1,4 @@
 import logging
-import logging
 import pandas as pd
 from typing import List
 from llama_index.core import Document, StorageContext, Settings
@@ -9,12 +8,8 @@ from llama_index.core.indices import VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.groq import Groq
 import kdbai_client as kdbai
-from dotenv import load_dotenv
-import os
 
-#from google.colab import userdata
-
-load_dotenv()
+from google.colab import userdata
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -81,8 +76,8 @@ def setup_kdbai_session() -> kdbai.Session:
     """
     try:
 
-        kdbai_endpoint = os.getenv('KDBAI_SESSION_ENDPOINT')
-        kdbai_api_key = os.getenv('KDBAI_API_KEY')
+        kdbai_endpoint = userdata.get('KDBAI_SESSION_ENDPOINT')
+        kdbai_api_key = userdata.get('KDBAI_API_KEY')
 
         if not kdbai_endpoint:
           raise ValueError("Please set KDBAI_SESSION_ENDPOINT environment variable.")
@@ -91,7 +86,7 @@ def setup_kdbai_session() -> kdbai.Session:
           raise ValueError("Please set KDBAI_API_KEY environment variable.")
 
         session = kdbai.Session(
-            endpoint=kdbai_endpoint,
+            endpoint=f"https://cloud.kdb.ai/instance/{kdbai_endpoint}",
             api_key=kdbai_api_key
         )
         logging.info("KDBAI session established.")
@@ -104,7 +99,7 @@ def setup_groq_llm():
     """
     Setup Groq LLM
     """
-    groq_api_key = os.getenv('GROQ_API_KEY')
+    groq_api_key = userdata.get('GROQ_API_KEY')
     if not groq_api_key:
         raise ValueError("Please set GROQ_API_KEY environment variable")
 
@@ -114,7 +109,7 @@ def setup_groq_llm():
         temperature=0.0
     )
 
-def setup_vector_store(documents: List[Document], session: kdbai.Session, db_name: str, table_name: str, embedding_model_name: str, recreate_store=False) -> None:
+def setup_vector_store(documents: List[Document], session: kdbai.Session, db_name: str, table_name: str, embedding_model_name: str) -> None:
     """
     Set up the vector store using KDBAI.
 
@@ -126,42 +121,39 @@ def setup_vector_store(documents: List[Document], session: kdbai.Session, db_nam
         embedding_model_name (str): Name of the embedding model.
     """
     try:
-        if recreate_store:
-            # Drop and recreate database if required
-            try:
-                session.database(db_name).drop()
-            except kdbai.KDBAIException:
-                pass
-            db = session.create_database(db_name)
+        # Drop and recreate database
+        try:
+            session.database(db_name).drop()
+        except kdbai.KDBAIException:
+            pass
+        db = session.create_database(db_name)
 
-            # Check if table exists and drop if necessary
-            try:
-                db.table(table_name).drop()
-            except kdbai.KDBAIException:
-                pass
+        # Check if table exists and drop if necessary
+        try:
+            db.table(table_name).drop()
+        except kdbai.KDBAIException:
+            pass
 
-            table_schema = [
-                dict(name="document_id", type="bytes"),
-                dict(name="text", type="bytes"),
-                dict(name="embeddings", type="float32s"),
-                dict(name="issue_date_ts", type="datetime64[ns]")
-            ]
+        table_schema = [
+            dict(name="document_id", type="bytes"),
+            dict(name="text", type="bytes"),
+            dict(name="embeddings", type="float32s"),
+            dict(name="issue_date_ts", type="datetime64[ns]")
+        ]
 
-            index_flat = {
-                "name": "flat_index",
-                "type": "flat",
-                "column": "embeddings",
-                "params": {"dims": 384, "metric": "CS"}  # CS: Cosine Similarity metric
-            }
+        index_flat = {
+            "name": "flat_index",
+            "type": "flat",
+            "column": "embeddings",
+            "params": {"dims": 384, "metric": "CS"}  # CS: Cosine Similarity metric
+        }
 
-            table = db.create_table(table_name, schema=table_schema, indexes=[index_flat])
-        
-        # get table name
-        table = session.database(db_name).table(table_name)
+        table = db.create_table(table_name, schema=table_schema, indexes=[index_flat])
+
         # Initialize embeddings
         embedding_model = HuggingFaceEmbedding(
             model_name=embedding_model_name,
-            cache_folder=os.getcwd()+'/models'
+            cache_folder="/content/drive/MyDrive/Omdena/Regulatory RAG (SL Chapter)/code/model dev/cached_models/"
             )
 
         # Set up Groq API
@@ -245,7 +237,7 @@ def interactive_chat(query_engine: VectorStoreIndex, llm: Groq):
 
 if __name__ == "__main__":
     # Define paths and parameters
-    CSV_PATH = os.getenv('DATA_FOLDER')
+    CSV_PATH = "/content/drive/MyDrive/Omdena/Regulatory RAG (SL Chapter)/code/model dev/data/2024_11_28 v0_LK_tea_dataset.csv"
     TEXT_COL = "markdown_content"
     METADATA_COLS = ['id', 'class', 'issuing_authority', 'llama_title', 'llama_issue_date', 'llama_reference_number']
     DOC_METADATA_KEYS = ['id', 'class', 'issuing_authority', 'title', 'issue_date', 'reference_number']
@@ -255,23 +247,15 @@ if __name__ == "__main__":
 
     EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 
-    # if you want to recreate the store, set recreate_store=True
-    recreate_store=True
-
     try:
         # Load documents
-        if recreate_store:
-            docs = load_data(CSV_PATH, TEXT_COL, METADATA_COLS, DOC_METADATA_KEYS, only_tri_circulars=True)
-        else:
-            # use a better option for deployment
-            docs = None
+        docs = load_data(CSV_PATH, TEXT_COL, METADATA_COLS, DOC_METADATA_KEYS, only_tri_circulars=True)
 
         # Set up KDBAI session
         kdbai_session = setup_kdbai_session()
 
         # Set up vector store
-        
-        llm, index = setup_vector_store(docs, kdbai_session, DB_NAME, TABLE_NAME, EMBEDDING_MODEL_NAME, recreate_store=recreate_store)
+        llm, index = setup_vector_store(docs, kdbai_session, DB_NAME, TABLE_NAME, EMBEDDING_MODEL_NAME)
 
         # Set up query engine
         query_engine = setup_query_engine(index, llm)

@@ -3,4 +3,5 @@ preprocessing_pipeline
 .venv
 ___pycache__
 */___pycache__
-task-5-model-deployment/models
+models
+.locks
