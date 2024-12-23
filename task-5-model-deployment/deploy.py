@@ -30,9 +30,6 @@ GROQ_LLM_NAME = "llama3-groq-70b-8192-tool-use-preview"
 # Set up KDBAI session
 kdbai_session = setup_kdbai_session()
 
-# Set up KDBAI session
-kdbai_session = setup_kdbai_session()
-
 db = kdbai_session.database(DB_NAME)
 
 #set up vector store
@@ -122,7 +119,7 @@ if page == "Home":
 
             retrieval_result = query_engine.query(json.dumps(messages))
             stream = retrieval_result.response
-            print('result is ',retrieval_result)
+            #print('result is ',retrieval_result)
             response = st.write_stream(response_generator(stream))
         st.session_state.messages.append({"role":"assistant", "content":response})            
 
