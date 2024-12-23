@@ -2,28 +2,67 @@ import streamlit as st
 import os
 import time
 from llama_index.core import Document, StorageContext, Settings
-from rag_setup import setup_query_engine, setup_vector_store, setup_kdbai_session
+from dotenv import load_dotenv
+from rag_setup import setup_router_query_engine, setup_vector_store, setup_kdbai_session, setup_groq_llm
+from llama_index.vector_stores.kdbai import KDBAIVectorStore
+from llama_index.core.indices import VectorStoreIndex
+from llama_index.core import Document, StorageContext, Settings
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 import json
+
+load_dotenv()
 
 st.set_page_config(
     page_title="Sri Lanka Regulatory Archives Q&A",
     page_icon="📜",
     layout="wide"
 )
-DB_NAME = "srilanka_tri_circulars"
-TABLE_NAME = "rag_baseline"
+# Define KDBAI Database and Table Names
+DB_NAME = "test_srilanka_rag_database"
+TABLE_NAME_CIRCULAR = "test_circular_baseline"
+TABLE_NAME_REGULATION = "test_regulation_baseline"
+TABLE_NAME_GUIDELINE = "test_guideline_baseline"
 
+# Define HuggingFace Model and Groq LLM Names
 EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
+GROQ_LLM_NAME = "llama3-groq-70b-8192-tool-use-preview"
 
 # Set up KDBAI session
 kdbai_session = setup_kdbai_session()
 
+db = kdbai_session.database(DB_NAME)
+
 #set up vector store
-docs = []
-llm, index = setup_vector_store(docs, kdbai_session, DB_NAME, TABLE_NAME, EMBEDDING_MODEL_NAME)
+circular_table = db.table(TABLE_NAME_CIRCULAR)
+regulation_table = db.table(TABLE_NAME_REGULATION)
+guideline_table = db.table(TABLE_NAME_GUIDELINE)
+
+embedding_model = HuggingFaceEmbedding(
+            model_name=EMBEDDING_MODEL_NAME,
+            cache_folder=os.getcwd()+'/models'
+            )
+
+llm = setup_groq_llm(GROQ_LLM_NAME)
+
+Settings.llm = llm
+Settings.embed_model = embedding_model
+
+circular_vector_store = KDBAIVectorStore(circular_table)
+circular_index = VectorStoreIndex.from_vector_store(vector_store=circular_vector_store)
+
+guideline_vector_store = KDBAIVectorStore(guideline_table)
+guideline_index = VectorStoreIndex.from_vector_store(vector_store=guideline_vector_store)
+
+regulation_vector_store = KDBAIVectorStore(regulation_table)
+regulation_index = VectorStoreIndex.from_vector_store(vector_store=regulation_vector_store)
+indexes = {
+            'guideline': guideline_index,
+            'regulation': regulation_index,
+            'circular': circular_index
+        }
 
 # Set up query engine
-query_engine = setup_query_engine(index, llm)
+query_engine = setup_router_query_engine(indexes, llm)
 
 # streamed response emulator
 def response_generator(response):
@@ -72,13 +111,15 @@ if page == "Home":
                     {"role":m["role"], "content": m["content"]}
                     for m in st.session_state.messages
                 ]
-            instruction = f'''Use only the context provided to provide a response to the latest user question:
-            context:
-            {json.dumps(messages)}
-            '''
-            retrieval_result = query_engine.query(instruction)
+            # instruction = f'''Use only the context provided to provide a response to the latest user question:
+            # context:
+            # {json.dumps(messages)}
+            # '''
+            #retrieval_result = query_engine.query(instruction)
+
+            retrieval_result = query_engine.query(json.dumps(messages))
             stream = retrieval_result.response
-            print('result is ',retrieval_result)
+            #print('result is ',retrieval_result)
             response = st.write_stream(response_generator(stream))
         st.session_state.messages.append({"role":"assistant", "content":response})            
 
